@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  /* Light Mode - Premium Education Theme */
+  --color-background: oklch(100% 0 0);
+  /* Pure White */
+  --color-foreground: oklch(15% 0.05 265);
+  /* Deep Navy Text */
+
+  --color-card: oklch(100% 0 0);
+  --color-card-foreground: oklch(15% 0.05 265);
+
+  --color-popover: oklch(100% 0 0);
+  --color-popover-foreground: oklch(15% 0.05 265);
+
+  --color-primary: oklch(40% 0.15 265);
+  /* Deep Royal Blue */
+  --color-primary-foreground: oklch(98% 0 0);
+
+  --color-secondary: oklch(95% 0.03 85);
+  /* Light Gold Tint */
+  --color-secondary-foreground: oklch(35% 0.1 50);
+  /* Dark Gold/Brown */
+
+  --color-muted: oklch(96% 0.01 265);
+  --color-muted-foreground: oklch(50% 0.05 265);
+
+  --color-accent: oklch(96% 0.01 265);
+  --color-accent-foreground: oklch(20% 0.1 265);
+
+  --color-destructive: oklch(57.7% 0.245 27.3);
+  --color-destructive-foreground: oklch(98.5% 0 0);
+
+  --color-border: oklch(92% 0.01 265);
+  --color-input: oklch(92% 0.01 265);
+  --color-ring: oklch(40% 0.15 265);
+
+  --radius: 1rem;
+  /* Modern rounded feel */
+}
+
+.dark {
+  /* Dark Mode - Deep Indigo/Navy */
+  --color-background: oklch(8% 0.03 265);
+  /* Deeper Navy Black */
+  --color-foreground: oklch(95% 0.01 265);
+
+  --color-card: oklch(12% 0.04 265);
+  /* Richer Navy Card */
+  --color-card-foreground: oklch(95% 0.01 265);
+
+  --color-popover: oklch(12% 0.04 265);
+  --color-popover-foreground: oklch(95% 0.01 265);
+
+  --color-primary: oklch(65% 0.2 265);
+  /* More vibrant blue in dark mode */
+  --color-primary-foreground: oklch(10% 0.05 265);
+
+  --color-secondary: oklch(85% 0.15 85);
+  /* Bright Gold for highlights */
+  --color-secondary-foreground: oklch(15% 0.05 85);
+
+  --color-muted: oklch(18% 0.03 265);
+  --color-muted-foreground: oklch(75% 0.03 265);
+
+  --color-accent: oklch(22% 0.08 265);
+  /* Indigo accent */
+  --color-accent-foreground: oklch(98% 0.01 265);
+
+  --color-destructive: oklch(60% 0.22 25);
+  --color-destructive-foreground: oklch(98.5% 0 0);
+
+  --color-border: oklch(20% 0.05 265);
+  --color-input: oklch(20% 0.05 265);
+  --color-ring: oklch(65% 0.2 265);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: oklch(70% 0.02 265);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(60% 0.05 265);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: oklch(30% 0.02 265);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: oklch(40% 0.05 265);
+}
+
+/* Selection */
+::selection {
+  background: oklch(60% 0.18 265 / 0.3);
+}
+
+/* Premium Gradients */
+@utility bg-gradient-premium {
+  @apply bg-gradient-to-r from-[oklch(40%_0.15_265)] to-[oklch(35%_0.15_280)];
+}
+
+/* Animation Utilities */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@utility animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@utility animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
