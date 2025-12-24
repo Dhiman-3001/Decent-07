@@ -64,7 +64,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "py-2" : "py-4 md:py-6"
+        scrolled ? "py-2" : "py-4 md:py-2"
       )}
     >
       <nav className={cn(

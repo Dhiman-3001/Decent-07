@@ -30,7 +30,7 @@ export function PrincipalMessage() {
               <div className="relative">
                 <div className="aspect-[3/4] rounded-3xl bg-gradient-to-br from-indigo-100 to-white dark:from-card dark:to-card/80 overflow-hidden shadow-2xl border border-border/50 relative">
                   <Image
-                    src="/Heads/Binoy_Final-2.png"
+                    src="/Heads/Binoy_Chat.png"
                     alt="Mr. Binoy Saikia - Principal"
                     fill
                     className="object-cover object-top hover:scale-105 transition-transform duration-700"

@@ -12,7 +12,7 @@ export function HeroSection() {
 
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-40 md:pt-32 pb-12 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-40 md:pt-28 pb-12 overflow-hidden">
       {/* Background Ambience */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(var(--primary)/0.05),transparent_60%)]" />
