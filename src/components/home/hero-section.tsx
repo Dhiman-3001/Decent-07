@@ -33,7 +33,7 @@ export function HeroSection() {
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 text-xs font-semibold tracking-wide backdrop-blur-sm shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_10px_currentColor]" />
-                Admissions Open for the Session 2025-26
+                Admissions Open for the Session 2026-27
               </span>
               <p className="text-blue-200/80 text-sm font-medium tracking-wide">
                 Limited seats available | <span className="text-amber-400">Scholarship up to 90% on new admissions</span>

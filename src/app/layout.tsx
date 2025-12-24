@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | Decent Public School",
   },
   description:
-    "Decent Public School is a premier CBSE affiliated school in Japorigog, Guwahati, Assam. We provide quality education with a focus on academic excellence, moral values, and holistic development. Admissions open for 2025-26.",
+    "Decent Public School is a premier CBSE affiliated school in Japorigog, Guwahati, Assam. We provide quality education with a focus on academic excellence, moral values, and holistic development. Admissions open for 2026-27.",
   keywords: [
     "CBSE school Guwahati",
     "Decent Public School",

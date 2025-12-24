@@ -27,7 +27,7 @@ export function CTASection() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white border border-white/20 text-sm font-medium mb-6 backdrop-blur-sm"
           >
             <Calendar className="w-4 h-4" />
-            Admissions Open for 2025-26
+            Admissions Open for 2026-27
           </motion.span>
 
           <motion.h2

@@ -18,7 +18,7 @@ export function AdmissionsHero() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-sm font-medium mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            Admissions Open for 2025-26
+            Admissions Open for 2026-27
           </motion.div>
 
           <motion.div
