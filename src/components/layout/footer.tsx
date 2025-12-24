@@ -51,7 +51,7 @@ export function Footer() {
                 <GraduationCap className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="font-serif text-xl font-bold text-orange-500">
+                <h3 className="font-serif text-xl font-bold text-amber-400">
                   Decent Public School
                 </h3>
                 <p className="text-xs text-primary-foreground/60 font-medium tracking-wide">CBSE Curriculum</p>

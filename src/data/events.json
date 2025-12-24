@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "title": "Science Exhibition 2025",
+        "category": "Events",
+        "date": "October 20, 2025",
+        "time": "9:00 AM - 2:30 PM",
+        "location": "Main Exhibition Hall",
+        "description": "Our annual science exhibition showcased the innovative spirit of our students with over 50 creative projects and working models.",
+        "image": "/gallery/images/img-19.jpeg",
+        "featured": true
+    },
+    {
+        "id": 2,
+        "title": "CBSE Class 10 Toppers",
+        "category": "Achievements",
+        "date": "Academic Year 2018-2025",
+        "description": "Celebrating the consistent academic excellence of our students who secured top positions in the CBSE Class 10 Board Examinations.",
+        "image": "/gallery/images/img-1.jpeg",
+        "featured": true
+    },
+    {
+        "id": 3,
+        "title": "Annual School Picnic",
+        "category": "Events",
+        "date": "February 5, 2025",
+        "time": "8:00 AM - 5:00 PM",
+        "location": "Chandubi",
+        "description": "Students across classes 9th, 10th and all faculty members enjoyed a day of relaxation and bonding at our annual school picnic, creating lasting memories together.",
+        "image": "/gallery/images/img-11.jpeg",
+        "featured": false
+    },
+    {
+        "id": 4,
+        "title": "Farewell Ceremony Batch 2024-25",
+        "category": "Events",
+        "date": "February 28, 2025",
+        "time": "11:00 AM",
+        "location": "School Classroom",
+        "description": "A heartfelt farewell was organized to wish the 2024-25 batch success and happiness in their future academic journeys.",
+        "image": "/gallery/images/img-8.jpeg",
+        "featured": false
+    },
+    {
+        "id": 5,
+        "title": "Teacher's Day Celebration",
+        "category": "Events",
+        "date": "September 5, 2025",
+        "time": "10:30 AM",
+        "location": "School Assembly Hall",
+        "description": "Students expressed their gratitude through cultural performances and tokens of appreciation for our dedicated teaching staff.",
+        "image": "/gallery/images/img-6.jpeg",
+        "featured": false
+    },
+    {
+        "id": 6,
+        "title": "Cultural Celebration: Bihu",
+        "category": "Events",
+        "date": "Festive Season 2025",
+        "description": "Encapsulating the vibrant spirit of Assam with Bihu dances celebrated in unity by the DPS family.",
+        "image": "/gallery/images/img-18.jpeg",
+        "featured": false
+    }
+]

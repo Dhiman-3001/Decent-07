@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Sun, Moon } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -26,13 +26,37 @@ export function Navbar() {
   const pathname = usePathname()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
+
+    // Check admin status
+    fetch('/api/auth/me', { cache: 'no-store' })
+      .then(res => res.json())
+      .then(data => setIsAdmin(data.isAdmin))
+      .catch(err => console.error("Auth check failed", err))
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleSignOut = async () => {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST' })
+      setIsAdmin(false)
+      router.push('/')
+      router.refresh()
+    } catch (error) {
+      console.error("Logout failed", error)
+    }
+  }
+
+  const displayedLinks = isAdmin
+    ? navLinks.filter(link => ["Gallery", "Events"].includes(link.label))
+    : navLinks
 
   return (
     <motion.header
@@ -60,6 +84,7 @@ export function Navbar() {
           }}
         >
           {/* Logo */}
+          {/* Logo */}
           <Link
             href="/"
             className="flex items-center gap-3 group relative z-50"
@@ -71,14 +96,14 @@ export function Navbar() {
                 alt="Decent Public School Logo"
                 width={40}
                 height={40}
-                className="w-10 h-10 object-contain"
+                className="w-12 h-12 sm:w-10 sm:h-10 object-contain"
                 priority
               />
             </div>
             <div className="hidden sm:block leading-tight">
               <h1 className={cn(
                 "font-serif text-lg font-bold transition-colors duration-300",
-                "text-orange-500"
+                "text-amber-500"
               )}>
                 Decent Public School
               </h1>
@@ -88,24 +113,32 @@ export function Navbar() {
                   ? "text-muted-foreground"
                   : "text-muted-foreground dark:text-white/60"
               )}>
-                Under CBSE Board
+                Under CBSE Board - New Delhi
               </p>
             </div>
           </Link>
 
           {/* Mobile Center Title */}
-          <div className="absolute left-1/2 -translate-x-1/2 sm:hidden text-center z-40 w-full px-12 pointer-events-none">
-            <h1 className={cn(
-              "font-serif text-lg font-bold transition-colors duration-300 whitespace-nowrap",
-              "text-orange-500"
-            )}>
-              Decent Public School
-            </h1>
+          <div className="absolute left-1/2 -translate-x-1/2 sm:hidden text-center z-40 w-fit pointer-events-auto">
+            <Link href="/" onClick={(e) => e.stopPropagation()} className="flex flex-col items-center">
+              <h1 className={cn(
+                "font-serif text-xl font-bold transition-colors duration-300 whitespace-nowrap",
+                "text-amber-500"
+              )}>
+                Decent Public School
+              </h1>
+              <p className={cn(
+                "text-[10px] uppercase tracking-wider font-semibold transition-colors duration-300 whitespace-nowrap",
+                "text-red-500"
+              )}>
+                Under CBSE Board - New Delhi
+              </p>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {displayedLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -137,17 +170,29 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            <a
-              href="https://www.google.com/local/place/fid/0x375a58e32621c005:0x4926e18abc284a10/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DICsiJP7ujLSHGUZVZswzrA%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D16.13418%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFklDc2lKUDd1akxTSEdVWlZac3d6ckE%3D&sa=X&ved=2ahUKEwjM257noNORAxUnRmwGHVLSL8EQpx96BAgrEBI"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:block ml-2"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Button variant="gradient" size="sm" className="rounded-full px-6 shadow-primary/25">
-                Virtual tour
+            {isAdmin ? (
+              <Button
+                variant="destructive"
+                size="sm"
+                className="hidden sm:block ml-2 rounded-full px-6"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleSignOut()
+                }}
+              >
+                Sign Out
               </Button>
-            </a>
+            ) : (
+              <Link
+                href="/login"
+                className="hidden sm:block ml-2"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Button variant="gradient" size="sm" className="rounded-full px-6 shadow-primary/25">
+                  Login
+                </Button>
+              </Link>
+            )}
 
             {/* Mobile Menu Button */}
             <Button
@@ -160,7 +205,7 @@ export function Navbar() {
               }}
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? <X className="h-5 w-5 text-white" /> : <Menu className="h-5 w-5 text-white" />}
             </Button>
           </div>
         </div>
@@ -175,7 +220,7 @@ export function Navbar() {
               className="lg:hidden overflow-hidden"
             >
               <div className="py-4 space-y-2 border-t border-border/50 mt-2">
-                {navLinks.map((link, index) => (
+                {displayedLinks.map((link, index) => (
                   <motion.div
                     key={link.href}
                     initial={{ opacity: 0, x: -20 }}
@@ -202,16 +247,27 @@ export function Navbar() {
                   transition={{ delay: navLinks.length * 0.05 }}
                   className="pt-2 px-2"
                 >
-                  <a
-                    href="https://www.google.com/local/place/fid/0x375a58e32621c005:0x4926e18abc284a10/photosphere?iu=https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid%3DICsiJP7ujLSHGUZVZswzrA%26cb_client%3Dsearch.gws-prod.gps%26yaw%3D16.13418%26pitch%3D0%26thumbfov%3D100%26w%3D0%26h%3D0&ik=CAISFklDc2lKUDd1akxTSEdVWlZac3d6ckE%3D&sa=X&ved=2ahUKEwjM257noNORAxUnRmwGHVLSL8EQpx96BAgrEBI"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Button variant="gradient" className="w-full rounded-xl">
-                      Virtual tour
+                  {isAdmin ? (
+                    <Button
+                      variant="destructive"
+                      className="w-full rounded-xl"
+                      onClick={() => {
+                        setIsOpen(false)
+                        handleSignOut()
+                      }}
+                    >
+                      Sign Out
                     </Button>
-                  </a>
+                  ) : (
+                    <Link
+                      href="/login"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Button variant="gradient" className="w-full rounded-xl">
+                        Login
+                      </Button>
+                    </Link>
+                  )}
                 </motion.div>
               </div>
             </motion.div>

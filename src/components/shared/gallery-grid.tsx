@@ -1,69 +1,229 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Image as ImageIcon, Video, X, Maximize2, Play } from "lucide-react"
+import { Image as ImageIcon, Video, X, Maximize2, Play, Plus, Trash2, Loader2, Upload } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { ImageCropper } from "@/components/admin/image-cropper"
+import galleryData from "@/data/gallery.json"
 
 const categories = ["All", "Images", "Videos"]
 
-const galleryItems = [
-    { id: "img-1", type: "image", src: "/gallery/images/img-1.jpeg", title: "CBSE 10 Toppers list (2018-2025)", category: "Images" },
-    { id: "img-2", type: "image", src: "/gallery/images/img-2.jpeg", title: "School Activity", category: "Images" },
-    { id: "img-3", type: "image", src: "/gallery/images/img-3.jpeg", title: "Zubeen Garg Commemoration Ceremony", category: "Images" },
-    { id: "img-4", type: "image", src: "/gallery/images/img-4.jpeg", title: "School Activity", category: "Images" },
-    { id: "img-5", type: "image", src: "/gallery/images/img-5.jpeg", title: "School Activity", category: "Images" },
-    { id: "img-6", type: "image", src: "/gallery/images/img-6.jpeg", title: "Teacher's Day Celebration", category: "Images" },
-    { id: "img-7", type: "image", src: "/gallery/images/img-7.jpeg", title: "Teacher Staff", category: "Images" },
-    { id: "img-8", type: "image", src: "/gallery/images/img-8.jpeg", title: "Farewell of Batch 2024-25", category: "Images" },
-    { id: "img-9", type: "image", src: "/gallery/images/img-9.jpeg", title: "Holi Celebration", category: "Images" },
-    { id: "img-10", type: "image", src: "/gallery/images/img-10.jpeg", title: "Farewell Batch 2024-25", category: "Images" },
-    { id: "img-11", type: "image", src: "/gallery/images/img-11.jpeg", title: "School Picnic (2024-25)", category: "Images" },
-    { id: "img-12", type: "image", src: "/gallery/images/img-12.jpeg", title: "Class 10th Batch (2024-25)", category: "Images" },
-    { id: "img-13", type: "image", src: "/gallery/images/img-13.jpeg", title: "School Picnic (2024-25)", category: "Images" },
-    { id: "img-14", type: "image", src: "/gallery/images/img-14.jpeg", title: "School Picnic (2024-25)", category: "Images" },
-    { id: "img-15", type: "image", src: "/gallery/images/img-15.jpeg", title: "School Picnic (2024-25)", category: "Images" },
-    { id: "img-16", type: "image", src: "/gallery/images/img-16.jpeg", title: "School Picnic (2024-25)", category: "Images" },
-    { id: "img-17", type: "image", src: "/gallery/images/img-17.jpeg", title: "Zubeen Garg Tribute Ceremony", category: "Images" },
-    { id: "img-18", type: "image", src: "/gallery/images/img-18.jpeg", title: "Bihu Celebration", category: "Images" },
-    { id: "img-19", type: "image", src: "/gallery/images/img-19.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "img-20", type: "image", src: "/gallery/images/img-20.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "img-21", type: "image", src: "/gallery/images/img-21.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "img-22", type: "image", src: "/gallery/images/img-22.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "img-23", type: "image", src: "/gallery/images/img-23.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "img-24", type: "image", src: "/gallery/images/img-24.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "img-25", type: "image", src: "/gallery/images/img-25.jpeg", title: "Science Exhibition", category: "Images" },
-    { id: "vid-1", type: "video", src: "/gallery/videos/vid-1.mp4", title: "School Sports Week", category: "Videos" },
-    { id: "vid-2", type: "video", src: "/gallery/videos/vid-2.mp4", title: "Science Exhibition Highlights", category: "Videos" },
-]
+type GalleryItem = {
+    id: string
+    type: "image" | "video"
+    src: string
+    title: string
+    category: "Images" | "Videos" | string
+}
 
 export function GalleryGrid() {
     const [activeCategory, setActiveCategory] = useState("All")
-    const [selectedItem, setSelectedItem] = useState<typeof galleryItems[0] | null>(null)
+    const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
+    const [items, setItems] = useState<GalleryItem[]>(galleryData as GalleryItem[])
+    const [isAdmin, setIsAdmin] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
+
+    // Upload State
+    const [isUploadOpen, setIsUploadOpen] = useState(false)
+    const [uploadStep, setUploadStep] = useState<"crop" | "details">("crop")
+    const [croppedFile, setCroppedFile] = useState<File | null>(null)
+    const [newTitle, setNewTitle] = useState("")
+    const [isUploading, setIsUploading] = useState(false)
+
+    useEffect(() => {
+        fetchItems()
+        checkAdmin()
+    }, [])
+
+    const checkAdmin = async () => {
+        try {
+            const res = await fetch('/api/auth/me')
+            const data = await res.json()
+            setIsAdmin(data.isAdmin)
+        } catch (e) {
+            console.error(e)
+        }
+    }
+
+    const fetchItems = async () => {
+        try {
+            const res = await fetch('/api/admin/gallery')
+            if (res.ok) {
+                const data = await res.json()
+                setItems(data)
+            }
+        } catch (e) {
+            console.error(e)
+        } finally {
+            setIsLoading(false)
+        }
+    }
+
+    const handleDelete = async (e: React.MouseEvent, id: string) => {
+        e.stopPropagation()
+        if (!confirm("Are you sure you want to delete this item?")) return
+
+        try {
+            const res = await fetch(`/api/admin/gallery?id=${id}`, { method: 'DELETE' })
+            if (res.ok) {
+                const data = await res.json()
+                setItems(data.data || items.filter(i => i.id !== id))
+            }
+        } catch (e) {
+            console.error("Delete failed", e)
+        }
+    }
+
+    const handleCropComplete = (file: File) => {
+        setCroppedFile(file)
+        setUploadStep("details")
+    }
+
+    const handleUploadSubmit = async () => {
+        if (!croppedFile || !newTitle) {
+            alert("Please provide an image and caption")
+            return
+        }
+
+        setIsUploading(true)
+        try {
+            // 1. Upload Image
+            const formData = new FormData()
+            formData.append("file", croppedFile)
+
+            const uploadRes = await fetch('/api/admin/upload', {
+                method: 'POST',
+                body: formData
+            })
+
+            const uploadData = await uploadRes.json()
+
+            if (!uploadRes.ok) throw new Error(uploadData.error || "Upload failed")
+
+            // 2. Add to Gallery Data
+            const newItem = {
+                id: uploadData.id,
+                type: "image",
+                src: uploadData.path,
+                title: newTitle,
+                category: "Images"
+            }
+
+            const dataRes = await fetch('/api/admin/gallery', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newItem)
+            })
+
+            if (dataRes.ok) {
+                const result = await dataRes.json()
+                setItems(result.data)
+                setIsUploadOpen(false)
+                resetUploadForm()
+            }
+        } catch (e) {
+            console.error(e)
+            alert("Failed to add image. Check console.")
+        } finally {
+            setIsUploading(false)
+        }
+    }
+
+    const resetUploadForm = () => {
+        setCroppedFile(null)
+        setNewTitle("")
+        setUploadStep("crop")
+    }
 
     const filteredItems = activeCategory === "All"
-        ? galleryItems
-        : galleryItems.filter(item => item.category === activeCategory)
+        ? items
+        : items.filter(item => item.category === activeCategory)
+
+    if (isLoading) {
+        return <div className="py-24 flex justify-center"><Loader2 className="animate-spin text-muted-foreground" /></div>
+    }
 
     return (
         <section className="py-24">
             <div className="container mx-auto px-4 lg:px-8">
-                {/* Filter Tabs */}
-                <div className="flex flex-wrap justify-center gap-2 mb-12">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveCategory(category)}
-                            className={cn(
-                                "px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
-                                activeCategory === category
-                                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
-                                    : "bg-muted dark:bg-card/40 text-muted-foreground hover:bg-muted/80 dark:hover:bg-card/60 backdrop-blur-sm border border-border/40"
-                            )}
-                        >
-                            {category}
-                        </button>
-                    ))}
+
+                {/* Admin Controls */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+
+                    {/* Filter Tabs */}
+                    <div className="flex flex-wrap justify-center gap-2">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setActiveCategory(category)}
+                                className={cn(
+                                    "px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                                    activeCategory === category
+                                        ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
+                                        : "bg-muted dark:bg-card/40 text-muted-foreground hover:bg-muted/80 dark:hover:bg-card/60 backdrop-blur-sm border border-border/40"
+                                )}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {isAdmin && (
+                        <Dialog open={isUploadOpen} onOpenChange={(open) => {
+                            setIsUploadOpen(open)
+                            if (!open) resetUploadForm()
+                        }}>
+                            <DialogTrigger asChild>
+                                <Button size="lg" className="rounded-full shadow-lg gap-2">
+                                    <Plus className="w-5 h-5" /> Upload Media
+                                </Button>
+                            </DialogTrigger>
+                            <DialogContent className="sm:max-w-xl bg-slate-900 border-slate-800 text-slate-100">
+                                <DialogHeader>
+                                    <DialogTitle>Upload to Gallery</DialogTitle>
+                                </DialogHeader>
+
+                                <div className="py-4">
+                                    {uploadStep === "crop" ? (
+                                        <ImageCropper
+                                            aspectRatio={1} // Square for grid
+                                            onCropConfig={handleCropComplete}
+                                            onCancel={() => setIsUploadOpen(false)}
+                                        />
+                                    ) : (
+                                        <div className="space-y-4">
+                                            <div className="aspect-square w-32 mx-auto rounded-lg overflow-hidden border border-slate-700 bg-slate-800">
+                                                {croppedFile && <img src={URL.createObjectURL(croppedFile)} className="w-full h-full object-cover" />}
+                                            </div>
+
+                                            <div className="space-y-2">
+                                                <Label>Caption / Subtitle</Label>
+                                                <Input
+                                                    value={newTitle}
+                                                    onChange={(e) => setNewTitle(e.target.value)}
+                                                    placeholder="Enter image caption..."
+                                                    className="bg-slate-800 border-slate-700 text-white"
+                                                />
+                                            </div>
+
+                                            <div className="flex justify-end gap-3 pt-4">
+                                                <Button variant="ghost" onClick={() => setUploadStep("crop")}>Back</Button>
+                                                <Button onClick={handleUploadSubmit} disabled={isUploading}>
+                                                    {isUploading ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <Upload className="w-4 h-4 mr-2" />}
+                                                    Upload Item
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </DialogContent>
+                        </Dialog>
+                    )}
                 </div>
 
                 {/* Gallery Grid */}
@@ -122,6 +282,16 @@ export function GalleryGrid() {
                                         {item.type === "image" ? <ImageIcon className="w-4 h-4" /> : <Video className="w-4 h-4" />}
                                     </div>
                                 </div>
+
+                                {/* Admin Delete Button */}
+                                {isAdmin && (
+                                    <button
+                                        className="absolute top-4 right-4 w-8 h-8 rounded-lg bg-red-600/90 text-white flex items-center justify-center shadow-lg hover:bg-red-700 transition-colors z-20"
+                                        onClick={(e) => handleDelete(e, item.id)}
+                                    >
+                                        <Trash2 className="w-4 h-4" />
+                                    </button>
+                                )}
                             </motion.div>
                         ))}
                     </motion.div>
