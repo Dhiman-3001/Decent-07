@@ -75,7 +75,7 @@ export function VicePrincipalMessage() {
                             <div className="relative">
                                 <div className="aspect-[3/4] rounded-3xl bg-gradient-to-br from-orange-50 to-white dark:from-card dark:to-card/80 overflow-hidden shadow-2xl border border-border/50 relative">
                                     <Image
-                                        src="/Heads/Jintu_Final.png"
+                                        src="/Heads/Jintu_Final_new_1.png"
                                         alt="Mr. Jintu Patowary - Vice Principal"
                                         fill
                                         className="object-cover object-top hover:scale-105 transition-transform duration-700"
