@@ -17,8 +17,8 @@ import { cn } from "@/lib/utils"
 const features = [
   {
     icon: GraduationCap,
-    title: "CBSE Excellence",
-    description: "Comprehensive CBSE curriculum designed to foster academic brilliance and ensuring consistent board exam success for every student.",
+    title: "Academic Excellence",
+    description: "Comprehensive CBSE based curriculum designed to foster academic brilliance and ensuring consistent board exam success for every student.",
     iconClass: "text-blue-600 bg-blue-100 dark:bg-blue-900/30",
   },
   {
@@ -96,7 +96,7 @@ export function WhyChooseUs() {
         <SectionHeader
           badge="Why Choose Us"
           title="Excellence That Sets Us Apart"
-          description="Discover what makes Decent Public School the preferred choice for quality CBSE education in Guwahati."
+          description="Discover what makes Decent Public School the preferred choice for quality education in Guwahati."
         />
 
         <motion.div

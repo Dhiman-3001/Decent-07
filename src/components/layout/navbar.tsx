@@ -113,7 +113,7 @@ export function Navbar() {
                   ? "text-muted-foreground"
                   : "text-muted-foreground dark:text-white/60"
               )}>
-                Under CBSE Board - New Delhi
+                Based on CBSE Board Pattern
               </p>
             </div>
           </Link>
@@ -131,7 +131,7 @@ export function Navbar() {
                 "text-[10px] uppercase tracking-wider font-semibold transition-colors duration-300 whitespace-nowrap",
                 "text-red-500"
               )}>
-                Under CBSE Board - New Delhi
+                Based on CBSE Board Pattern
               </p>
             </Link>
           </div>

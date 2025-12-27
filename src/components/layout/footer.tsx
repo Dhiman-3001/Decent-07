@@ -26,7 +26,7 @@ const academicLinks = [
   { href: "/academics#primary", label: "Primary Section" },
   { href: "/academics#middle", label: "Middle School" },
   { href: "/academics#secondary", label: "Secondary School" },
-  { href: "/academics#curriculum", label: "CBSE Curriculum" },
+  { href: "/academics#curriculum", label: "CBSE Based Curriculum" },
 ]
 
 export function Footer() {
@@ -53,11 +53,11 @@ export function Footer() {
                 <h3 className="font-serif text-xl font-bold text-amber-400">
                   Decent Public School
                 </h3>
-                <p className="text-xs text-primary-foreground/60 font-medium tracking-wide">CBSE Curriculum</p>
+                <p className="text-xs text-primary-foreground/60 font-medium tracking-wide">CBSE Based Curriculum</p>
               </div>
             </Link>
             <p className="text-sm leading-relaxed text-slate-400">
-              Nurturing young minds with quality education, strong values, and holistic development since our establishment. A trusted name in CBSE education in Guwahati.
+              Nurturing young minds with quality education, strong values, and holistic development since our establishment. A trusted name in education in Guwahati.
             </p>
             <div className="flex gap-3">
               {[

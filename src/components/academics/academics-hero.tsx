@@ -38,7 +38,7 @@ export function AcademicsHero() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground dark:text-white/70 leading-relaxed"
           >
-            Our comprehensive curriculum (Under CBSE Board) is designed to foster intellectual growth, critical thinking, and a love for learning. We prepare students not just for examinations, but for life&apos;s challenges.
+            Our comprehensive curriculum (Based on CBSE Board Pattern) is designed to foster intellectual growth, critical thinking, and a love for learning. We prepare students not just for examinations, but for life&apos;s challenges.
           </motion.p>
         </div>
       </div>

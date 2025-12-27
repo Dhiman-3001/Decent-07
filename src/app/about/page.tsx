@@ -8,7 +8,7 @@ import { CoreValues } from "@/components/about/core-values"
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Decent Public School's philosophy, vision, mission, and commitment to providing quality CBSE education in Guwahati, Assam.",
+    "Learn about Decent Public School's philosophy, vision, mission, and commitment to providing quality education (CBSE based) in Guwahati, Assam.",
 }
 
 export default function AboutPage() {

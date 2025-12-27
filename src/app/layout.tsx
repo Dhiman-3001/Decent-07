@@ -19,44 +19,44 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://decentpublicschool.com"),
   title: {
-    default: "Decent Public School | CBSE School in Japorigog, Guwahati",
+    default: "Decent Public School | CBSE Based Curriculum in Japorigog, Guwahati",
     template: "%s | Decent Public School",
   },
   description:
-    "Decent Public School is a premier CBSE affiliated school in Japorigog, Guwahati, Assam. We provide quality education with a focus on academic excellence, moral values, and holistic development. Admissions open for 2026-27.",
+    "Decent Public School is a premier school in Japorigog, Guwahati, Assam. We provide quality education with a focus on academic excellence, moral values, and holistic development. Admissions open for 2026-27.",
   keywords: [
-    "CBSE school Guwahati",
+    "CBSE based curriculum school Guwahati",
     "Decent Public School",
     "best school in Japorigog",
-    "CBSE school Assam",
+    "CBSE pattern school Assam",
     "school admission Guwahati",
     "quality education Guwahati",
-    "affordable CBSE school",
+    "affordable CBSE curriculum school",
   ],
   authors: [{ name: "Decent Public School" }],
   creator: "Decent Public School",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://decentpublicschool.com",
+    // url: "https://decentpublicschool.com", // Commented out to allow scraping of current deployment URL
     siteName: "Decent Public School",
-    title: "Decent Public School | CBSE School in Japorigog, Guwahati",
+    title: "Decent Public School | CBSE Based Curriculum in Japorigog, Guwahati",
     description:
-      "Premier CBSE affiliated school in Guwahati offering quality education with academic excellence and holistic development.",
+      "Premier school in Guwahati offering quality education with academic excellence and holistic development.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/School-app/School_Logo_Final.png",
         width: 1200,
         height: 630,
-        alt: "Decent Public School - Nurturing Minds, Building Futures",
+        alt: "Decent Public School Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Decent Public School | CBSE School in Guwahati",
+    title: "Decent Public School | CBSE Based Curriculum in Guwahati",
     description:
-      "Premier CBSE affiliated school in Guwahati offering quality education.",
+      "Premier school in Guwahati offering high-quality education with academic excellence and holistic development.",
   },
   robots: {
     index: true,

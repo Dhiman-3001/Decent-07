@@ -7,7 +7,7 @@ import { TeachingMethodology } from "@/components/academics/teaching-methodology
 export const metadata: Metadata = {
   title: "Academics",
   description:
-    "Explore our comprehensive CBSE curriculum, teaching methodology, and academic programs at Decent Public School, Guwahati.",
+    "Explore our comprehensive CBSE based curriculum, teaching methodology, and academic programs at Decent Public School, Guwahati.",
 }
 
 export default function AcademicsPage() {
