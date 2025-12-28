@@ -57,7 +57,7 @@ export function VicePrincipalMessage() {
 
                             <div className="mt-8 pt-6 border-t border-orange-100 text-right lg:text-left">
                                 <p className="font-serif text-xl font-semibold text-foreground">
-                                    Mr. Jintu Patowary
+                                    Jintu Ch Patowary
                                 </p>
                                 <p className="text-muted-foreground">
                                     Vice Principal, <span className="text-orange-500">Decent Public School</span>
@@ -76,7 +76,7 @@ export function VicePrincipalMessage() {
                                 <div className="aspect-[3/4] rounded-3xl bg-gradient-to-br from-orange-50 to-white dark:from-card dark:to-card/80 overflow-hidden shadow-2xl border border-border/50 relative">
                                     <Image
                                         src="/Heads/Jintu_Final_new_1.png"
-                                        alt="Mr. Jintu Patowary - Vice Principal"
+                                        alt="Jintu Patowary - Vice Principal"
                                         fill
                                         className="object-cover object-top hover:scale-105 transition-transform duration-700"
                                         priority
