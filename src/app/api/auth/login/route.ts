@@ -1,53 +1,34 @@
 import { NextResponse } from 'next/server'
-import { cookies } from 'next/headers'
 
 export async function POST(request: Request) {
     try {
-        const body = await request.json()
-        const username = body.username?.trim()
-        const password = body.password?.trim()
+        const { username, password } = await request.json()
 
-        const validUsername = process.env.ADMIN_USERNAME?.trim()
-        const validPassword = process.env.ADMIN_PASSWORD?.trim()
-
-        console.log("Login Attempt:", {
-            receivedUser: username,
-            expectedUser: validUsername,
-            matchUser: username === validUsername,
-            matchPass: password === validPassword
-        })
-
-        if (!validUsername || !validPassword) {
-            console.error("Admin credentials not set in .env")
-            return NextResponse.json(
-                { error: 'Server configuration error' },
-                { status: 500 }
-            )
-        }
+        // Simple credential check (in production, use proper hashing and database)
+        const validUsername = process.env.ADMIN_USERNAME || 'admin'
+        const validPassword = process.env.ADMIN_PASSWORD || 'dps2024admin'
 
         if (username === validUsername && password === validPassword) {
-            const cookieStore = await cookies()
+            const response = NextResponse.json({ success: true })
 
-            // Setting cookie with less restriction for debugging
-            cookieStore.set('dps_admin_session', 'authenticated', {
+            // Set admin session cookie
+            response.cookies.set('dps_admin_session', 'authenticated', {
                 httpOnly: true,
-                secure: false, // Force false for localhost debugging
-                sameSite: 'lax',
-                maxAge: 60 * 60 * 24, // 1 day
-                path: '/',
+                secure: process.env.NODE_ENV === 'production',
+                sameSite: 'strict',
+                maxAge: 60 * 60 * 24, // 24 hours
+                path: '/'
             })
 
-            console.log("Cookie set successfully")
-            return NextResponse.json({ success: true })
-        } else {
-            console.log("Invalid credentials")
-            return NextResponse.json(
-                { error: 'Invalid credentials' },
-                { status: 401 }
-            )
+            return response
         }
+
+        return NextResponse.json(
+            { error: 'Invalid credentials' },
+            { status: 401 }
+        )
     } catch (error) {
-        console.error("Login Server Error:", error)
+        console.error('Login error:', error)
         return NextResponse.json(
             { error: 'Internal server error' },
             { status: 500 }

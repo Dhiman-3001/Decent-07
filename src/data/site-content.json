@@ -1,0 +1,74 @@
+{
+    "home": {
+        "hero": {
+            "badgeText": "Admissions Open for the Session 2026-27",
+            "subBadgeText": "Limited seats available | Scholarship up to 90% on new admissions",
+            "heading1": "Shaping Minds",
+            "heading2": "for Tomorrow",
+            "description": "Decent Public School combines traditional values with modern academic excellence. We nurture intellectual curiosity, moral integrity, and social responsibility in every student.",
+            "heroImage": "/Heads/Saraswati_maa_Lands.png"
+        },
+        "scrollingBanner": {
+            "text": "Welcome to Decent Public School - Admissions Open 2026-27"
+        },
+        "testimonials": [
+            {
+                "id": "1",
+                "name": "Mrs. Priya Sharma",
+                "role": "Parent (Class 8)",
+                "content": "My daughter has been studying here for the last few years. The teachers are sincere and give proper attention to students. Discipline is good and we are satisfied with her progress.",
+                "rating": 4
+            },
+            {
+                "id": "2",
+                "name": "Mr. Rajesh Kumar",
+                "role": "Parent (Class 5)",
+                "content": "The school environment is safe and teachers are cooperative. We get regular updates about our child. Fees are reasonable compared to other schools in the area.",
+                "rating": 4
+            },
+            {
+                "id": "3",
+                "name": "Anita Devi",
+                "role": "Parent (Class 10)",
+                "content": "The teachers helped my daughter a lot during her board preparation. They were supportive and guided students properly. We are thankful to the school staff.",
+                "rating": 5
+            },
+            {
+                "id": "4",
+                "name": "Rohit Das",
+                "role": "Student (Class 9)",
+                "content": "Teachers explain topics clearly and are helpful when we ask doubts. I like the school discipline and sports activities.",
+                "rating": 4
+            },
+            {
+                "id": "5",
+                "name": "Puja Kalita",
+                "role": "Student (Class 7)",
+                "content": "I enjoy coming to school. Teachers are kind and help us in studies and activities. Our classrooms are clean and comfortable.",
+                "rating": 4
+            },
+            {
+                "id": "6",
+                "name": "Aman Hazarika",
+                "role": "Student (Class 10)",
+                "content": "The school helped me stay focused on my studies. Teachers guide us well, especially during exams.",
+                "rating": 4
+            }
+        ]
+    },
+    "about": {
+        "visionMission": {
+            "vision": "To be a leading educational institution that nurtures future leaders with strong values, academic excellence, and a global perspective.",
+            "mission": "To provide quality education that develops intellectual curiosity, critical thinking, and moral integrity in every student."
+        }
+    },
+    "contact": {
+        "address": "Japorigog, Guwahati, Assam 781005",
+        "phone": [
+            "+91 12345 67890",
+            "+91 98765 43210"
+        ],
+        "email": "info@decentpublicschool.com",
+        "hours": "Monday - Saturday: 8:00 AM - 3:00 PM"
+    }
+}

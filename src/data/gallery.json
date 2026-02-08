@@ -2,267 +2,323 @@
     {
         "id": "img-1",
         "type": "image",
-        "src": "/gallery/images/img-1.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539578/img-1_s6or73.jpg",
         "title": "CBSE 10 Toppers list (2018-2025)",
-        "category": "Images"
-    },
-    {
-        "id": "img-2",
-        "type": "image",
-        "src": "/gallery/images/img-2.jpeg",
-        "title": "School Activity",
-        "category": "Images"
-    },
-    {
-        "id": "img-3",
-        "type": "image",
-        "src": "/gallery/images/img-3.jpeg",
-        "title": "Zubeen Garg Commemoration Ceremony",
-        "category": "Images"
-    },
-    {
-        "id": "img-4",
-        "type": "image",
-        "src": "/gallery/images/img-4.jpeg",
-        "title": "School Activity",
         "category": "Images"
     },
     {
         "id": "img-5",
         "type": "image",
-        "src": "/gallery/images/img-5.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539580/img-5_htpofz.jpg",
         "title": "School Activity",
         "category": "Images"
     },
     {
         "id": "img-6",
         "type": "image",
-        "src": "/gallery/images/img-6.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539581/img-6_l5pfx8.jpg",
         "title": "Teacher's Day Celebration",
-        "category": "Images"
-    },
-    {
-        "id": "img-7",
-        "type": "image",
-        "src": "/gallery/images/img-7.jpeg",
-        "title": "Teacher Staff",
-        "category": "Images"
-    },
-    {
-        "id": "img-8",
-        "type": "image",
-        "src": "/gallery/images/img-8.jpeg",
-        "title": "Farewell of Batch 2024-25",
         "category": "Images"
     },
     {
         "id": "img-9",
         "type": "image",
-        "src": "/gallery/images/img-9.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539584/img-9_zgbwsq.jpg",
         "title": "Holi Celebration",
         "category": "Images"
     },
     {
         "id": "img-10",
         "type": "image",
-        "src": "/gallery/images/img-10.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539585/img-10_ngq6wt.jpg",
         "title": "Farewell Batch 2024-25",
-        "category": "Images"
-    },
-    {
-        "id": "img-11",
-        "type": "image",
-        "src": "/gallery/images/img-11.jpeg",
-        "title": "School Picnic (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-12",
         "type": "image",
-        "src": "/gallery/images/img-12.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539580/img-5_htpofz.jpg",
         "title": "Class 10th Batch (2024-25)",
-        "category": "Images"
-    },
-    {
-        "id": "img-13",
-        "type": "image",
-        "src": "/gallery/images/img-13.jpeg",
-        "title": "School Picnic (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-14",
         "type": "image",
-        "src": "/gallery/images/img-14.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539589/img-14_mzhnqr.jpg",
         "title": "School Picnic (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-15",
         "type": "image",
-        "src": "/gallery/images/img-15.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539591/img-15_rvvpok.jpg",
         "title": "School Picnic (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-16",
         "type": "image",
-        "src": "/gallery/images/img-16.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539591/img-16_bao8ju.jpg",
         "title": "School Picnic (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-17",
         "type": "image",
-        "src": "/gallery/images/img-17.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539580/img-3_zekxex.jpg",
         "title": "Zubeen Garg Tribute Ceremony",
         "category": "Images"
     },
     {
         "id": "img-18",
         "type": "image",
-        "src": "/gallery/images/img-18.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539594/img-18_vayemf.jpg",
         "title": "Bihu Celebration",
-        "category": "Images"
-    },
-    {
-        "id": "img-19",
-        "type": "image",
-        "src": "/gallery/images/img-19.jpeg",
-        "title": "Science Exhibition",
-        "category": "Images"
-    },
-    {
-        "id": "img-20",
-        "type": "image",
-        "src": "/gallery/images/img-20.jpeg",
-        "title": "Science Exhibition",
         "category": "Images"
     },
     {
         "id": "img-21",
         "type": "image",
-        "src": "/gallery/images/img-21.jpeg",
-        "title": "Science Exhibition",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539597/img-21_zgtkgo.jpg",
+        "title": "Science & Art Exhibition 2023-24",
         "category": "Images"
     },
     {
         "id": "img-22",
         "type": "image",
-        "src": "/gallery/images/img-22.jpeg",
-        "title": "Science Exhibition",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539598/img-22_lkkheq.jpg",
+        "title": "Science & Art Exhibition 2023-24",
         "category": "Images"
     },
     {
         "id": "img-23",
         "type": "image",
-        "src": "/gallery/images/img-23.jpeg",
-        "title": "Science Exhibition",
-        "category": "Images"
-    },
-    {
-        "id": "img-24",
-        "type": "image",
-        "src": "/gallery/images/img-24.jpeg",
-        "title": "Science Exhibition",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539599/img-23_rxn4yw.jpg",
+        "title": "Science & Art Exhibition 2023-24",
         "category": "Images"
     },
     {
         "id": "img-25",
         "type": "image",
-        "src": "/gallery/images/img-25.jpeg",
-        "title": "Science Exhibition",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539603/img-25_cwekty.jpg",
+        "title": "Science & Art Exhibition 2023-24",
         "category": "Images"
     },
     {
         "id": "img-26",
         "type": "image",
-        "src": "/gallery/images/img-26.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539603/img-26_w9sc2s.jpg",
         "title": "Bihu Celebration (2024-25)",
-        "category": "Images"
-    },
-    {
-        "id": "img-27",
-        "type": "image",
-        "src": "/gallery/images/img-27.jpeg",
-        "title": "Holi Celebration (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-28",
         "type": "image",
-        "src": "/gallery/images/img-28.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539604/img-28_tyq6iv.jpg",
         "title": "Picnic to Chandubi Session 2024-25",
         "category": "Images"
     },
     {
         "id": "img-29",
         "type": "image",
-        "src": "/gallery/images/img-29.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539604/img-29_tnxlnk.jpg",
         "title": "Bihu Celebration (2024-25)",
         "category": "Images"
     },
     {
         "id": "img-30",
         "type": "image",
-        "src": "/gallery/images/img-30.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539607/img-30_x102kr.jpg",
         "title": "Picnic to Chandubi Session 2024-25",
         "category": "Images"
     },
     {
         "id": "img-31",
         "type": "image",
-        "src": "/gallery/images/img-31.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539608/img-31_e7f9hk.jpg",
         "title": "Independence Day celebration",
         "category": "Images"
     },
     {
         "id": "img-32",
         "type": "image",
-        "src": "/gallery/images/img-32.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539608/img-32_pqghrl.jpg",
         "title": "Picnic to POBITORA Wildlife Sanctuary Session 2023-24",
         "category": "Images"
     },
     {
         "id": "img-33",
         "type": "image",
-        "src": "/gallery/images/img-33.jpeg",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539610/img-33_kfn76w.jpg",
         "title": "Farewell to Class Xth Students (Batch 2025-26)",
         "category": "Images"
     },
     {
-        "id": "vid-1",
+        "id": "vid-01",
         "type": "video",
-        "src": "/gallery/videos/vid-1.mp4",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542204/Vid-01_nl0act.mp4",
         "title": "School Sports Week",
-        "category": "Videos"
+        "title2": "",
+        "category": "Videos",
+        "description": "Highlights from our exciting School Sports Week featuring various athletic events and student competitions.",
+        "links": {
+            "youtube": "",
+            "facebook": "",
+            "instagram": ""
+        }
     },
     {
-        "id": "vid-2",
+        "id": "vid-02",
         "type": "video",
-        "src": "/gallery/videos/vid-2.mp4",
-        "title": "Science Exhibition Highlights",
-        "category": "Videos"
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542220/Vid-02_ebtoba.mp4",
+        "title": "Student's Birthday Celebration",
+        "title2": "",
+        "category": "Videos",
+        "description": "A heartwarming birthday celebration for one of our beloved students, filled with joy and memorable moments.",
+        "links": {
+            "youtube": "",
+            "facebook": "",
+            "instagram": ""
+        }
     },
     {
-        "id": "vid-3",
+        "id": "vid-03",
         "type": "video",
-        "src": "/gallery/videos/vid-3.mp4",
-        "title": "Tribute to famous Assamese Singer Zubeen Garg",
-        "category": "Videos"
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542232/Vid-03_l9pgsg.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Melodic Tribute | 'Pretty Little Baby' by Connie Francis | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, presented a charming and nostalgic performance to 'Pretty Little Baby' by Connie Francis, a classic pop ballad originally released in the early 1960s and beloved for its soft, affectionate melody and sweet, endearing lyrics that evoke warmth and timeless romantic innocence, making it a gentle and uplifting choice that resonated across generations and brought a sincere, feel-good mood to the stage.",
+        "links": {
+            "youtube": "https://youtu.be/XK5B_qKuyP4",
+            "facebook": "https://www.facebook.com/share/v/188f2wputP/",
+            "instagram": "https://www.instagram.com/reel/DUdoZ7RD46Z/"
+        }
     },
     {
-        "id": "vid-4",
+        "id": "vid-04",
         "type": "video",
-        "src": "/gallery/videos/vid-4.mp4",
-        "title": "Birthday Celebration of student",
-        "category": "Videos"
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542430/Vid-04_gga8xq.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Dance Highlight | 'Morni Banke' by Guru Randhawa & Neha Kakkar | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, set the stage alight with a spirited performance to 'Morni Banke', a peppy Punjabi-infused Bollywood dance number sung by Guru Randhawa and Neha Kakkar from the movie Badhaai Ho. Known for its lively rhythm, energetic beats, and celebratory feel that makes it a perfect choice for joyful dance sequences and festive gatherings, the song brings an infectious party mood that encourages movement and high-spirited audience engagement.",
+        "links": {
+            "youtube": "https://youtu.be/cZ-aEpx_xJM",
+            "facebook": "https://www.facebook.com/share/v/1DRQTQXaM1/",
+            "instagram": "https://www.instagram.com/reel/DUd2wW0kfTy/"
+        }
     },
     {
-        "id": "vid-5",
+        "id": "vid-05",
         "type": "video",
-        "src": "/gallery/videos/vid-5.mp4",
-        "title": "Tribute to famous Assamese Singer Zubeen Garg",
-        "category": "Videos"
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542325/Vid-05_eacj7z.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Cultural Spotlight | 'Bor Axom' by Kussum Kailash | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, presented an emotive and culturally rich segment with the Assamese song 'Bor Axom' performed by Kussum Kailash. This song celebrates the vast heritage and collective identity of Assam and North East India, blending melodic rhythms and traditional influences to evoke pride, unity, and the joyful spirit of the region's diverse communities, creating a heartfelt and uplifting mood for the audience.",
+        "links": {
+            "youtube": "https://youtu.be/xdYDd8QZ-Sg",
+            "facebook": "https://www.facebook.com/share/v/188MWT5qX6/",
+            "instagram": "https://www.instagram.com/reel/DUdmoI2jPwG/"
+        }
+    },
+    {
+        "id": "vid-06",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542938/Vid-06_xwtlrb.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Kids' Dance Performance | 'Gori Gori' (Anu Malik / Shreya Ghoshal) | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, presented an energetic and joyful group performance by the little stars set to 'Gori Gori' - a lively and peppy Bollywood track originally composed by Anu Malik and featuring voices including Shreya Ghoshal that evokes a spirited celebration of youth and fun with catchy rhythms and upbeat mood, making it perfect for the young performers to shine and delight the audience.",
+        "links": {
+            "youtube": "https://youtu.be/0cGA_rXhnZA",
+            "facebook": "https://www.facebook.com/share/v/1GJANWTZok/",
+            "instagram": "https://www.instagram.com/reel/DUdnyTZjrzn/"
+        }
+    },
+    {
+        "id": "vid-07",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542361/Vid-07_nbm55t.mp4",
+        "title": "Annual Day Celebration",
+        "title2": "Dated : 02 Feb 2026",
+        "category": "Videos",
+        "description": "A spectacular celebration of our school's Annual Day featuring cultural performances, awards, and memorable moments with students, teachers, and parents.",
+        "links": {
+            "youtube": "",
+            "facebook": "",
+            "instagram": ""
+        }
+    },
+    {
+        "id": "vid-08",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542515/Vid-08_dsgvm1.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Dance Fiesta | 'Ho Jayegi Balle Balle' by Daler Mehndi | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, brought the energy up with an electrifying performance to 'Ho Jayegi Balle Balle' by Daler Mehndi, a high-spirited Punjabi pop-bhangra track known for its upbeat tempo and infectious rhythm that evokes joy and celebration, encouraging everyone to dance and cheer with its vibrant mood and festive vibes, making it a perfect choice for a lively cultural showcase.",
+        "links": {
+            "youtube": "https://youtu.be/c6OOmfTAo9s",
+            "facebook": "https://www.facebook.com/share/v/14T17vZcc5g/",
+            "instagram": "https://www.instagram.com/reel/DUdzf7-jcyX/"
+        }
+    },
+    {
+        "id": "vid-09",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542423/Vid-09_fkw6lo.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Dance Celebration | 'It's the Time to Disco' (Vasundhara Das & K.K.) | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, illuminated the stage with a dynamic and high-energy performance to 'It's the Time to Disco', a lively Bollywood disco-dance track from the movie Kal Ho Naa Ho, sung by Vasundhara Das, K.K., Shaan and Loy Mendonsa. This song is known for its rhythmic beats, pulsating tempo and celebratory vibe that encourages everyone to let go, dance freely and enjoy the moment - making it a perfect choice to uplift the audience with vibrant enthusiasm and spirited movement.",
+        "links": {
+            "youtube": "https://youtu.be/czNE9cb2fd4",
+            "facebook": "https://www.facebook.com/share/v/18C8L6fcJo/",
+            "instagram": "https://www.instagram.com/reel/DUd0bLmiR9s/"
+        }
+    },
+    {
+        "id": "vid-10",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542460/Vid-10_cyetdf.mp4",
+        "title": "Annual Day Celebration",
+        "title2": "Dated : 02 Feb 2026",
+        "category": "Videos",
+        "description": "A spectacular celebration of our school's Annual Day featuring cultural performances, awards, and memorable moments with students, teachers, and parents.",
+        "links": {
+            "youtube": "",
+            "facebook": "",
+            "instagram": ""
+        }
+    },
+    {
+        "id": "vid-11",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542492/Vid-12_ssmrpx.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Opening | 'Ram Siya Ram' Welcome Performance",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, hosted its Annual Day celebration on 2nd February, Sunday, where the devotional song 'Ram Siya Ram' was performed as the opening welcome presentation, creating a calm, sacred, and graceful beginning to the programme.",
+        "links": {
+            "youtube": "https://youtu.be/hKnAdEBh7T8",
+            "facebook": "https://www.facebook.com/share/v/1C83gsaX9m/",
+            "instagram": "https://www.instagram.com/reel/DUYn1W3Efe3/"
+        }
+    },
+    {
+        "id": "vid-13",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542499/Vid-13_xwyuod.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Cultural Medley | Shubhaarambh - Barso Re - Nagada Sang Dhol | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, hosted its Annual Day celebration on 2nd February, Sunday, featuring a vibrant cultural sequence set to 'Shubhaarambh', 'Barso Re', and 'Nagada Sang Dhol'. The performance beautifully progressed from the auspicious and graceful essence of Shubhaarambh, symbolizing a positive and sacred beginning, to the refreshing and joyful rhythm of Barso Re, evoking emotions of celebration, nature, and youthful energy, and concluded with the powerful beats of Nagada Sang Dhol, expressing strength, confidence, and high-spirited festivity, leaving the audience energized and enthralled.",
+        "links": {
+            "youtube": "https://youtu.be/2W7v9bltSXY",
+            "facebook": "https://www.facebook.com/share/v/1AcNVKG2k9/",
+            "instagram": "https://www.instagram.com/reel/DUdlGF1lCzp/"
+        }
     }
 ]

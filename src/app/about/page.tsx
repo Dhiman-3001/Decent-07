@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     "Learn about Decent Public School's philosophy, vision, mission, and commitment to providing quality education (CBSE based) in Guwahati, Assam.",
 }
 
+import { FacultySection } from "@/components/about/faculty-section"
+
 export default function AboutPage() {
   return (
     <>
@@ -19,6 +21,7 @@ export default function AboutPage() {
       <PrincipalMessage />
       <VicePrincipalMessage />
       <CoreValues />
+      <FacultySection />
     </>
   )
 }

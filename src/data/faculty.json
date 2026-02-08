@@ -1,0 +1,121 @@
+[
+    {
+        "id": "principal",
+        "name": "Mr. Binoy Saikia",
+        "role": "Principal",
+        "quote": "Dear Parents and Students,\n\nWelcome to Decent Public School, where we believe that every child is unique and possesses unlimited potential. Our commitment is to provide an environment that nurtures this potential through quality education, strong values, and holistic development.\n\nAt DPS, we go beyond textbooks. Our dedicated faculty works tirelessly to ensure that students not only excel academically but also develop critical thinking, creativity, and character. We prepare our students not just for examinations, but for life.\n\nI invite you to be part of our school family, where together we can shape the future leaders of tomorrow.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770556963/Binoy_Final_kuqjzw.png"
+    },
+    {
+        "id": "vice-principal",
+        "name": "Jintu Ch Patowary",
+        "role": "Vice Principal",
+        "quote": "Dear Parents and Students,\n\nEducation is a shared commitment between dedicated teachers, motivated students, and enthusiastic parents. As Vice Principal, I am delighted to welcome you to another promising academic year at Decent Public School.\n\nOur goal is to foster an inclusive community where every student feels valued and inspired to learn. We strive to maintain high academic standards while ensuring the emotional and social well-being of our children.\n\nTogether, let us build a foundation of trust and excellence that empowers our students to face the future with confidence.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770556964/Jintu_Final_lprgki.png"
+    },
+    {
+        "id": "1",
+        "name": "Leepika Patowary",
+        "role": "Academic Coordinator",
+        "quote": "Empowering students to reach their full potential through creative learning.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Leepika_Patowary_yfaz5r.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Neelam Roy Das",
+        "role": "Faculty Member",
+        "quote": "Building a strong foundation for future leaders of tomorrow.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Neelam_Roy_Das_ci8osi.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Somi Sinha Das",
+        "role": "Faculty Member",
+        "quote": "Nurturing curiosity and a lifelong passion for knowledge.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539463/Somi_Sinha_Das_vbmkg0.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Puja Srivastav",
+        "role": "Faculty Member",
+        "quote": "Dedicated to excellence in education and character development.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Puja_Srivastav_u4v76u.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Mousumi Kalita",
+        "role": "Faculty Member",
+        "quote": "Creating an inclusive environment where every child can shine.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539461/Mousumi_Kalita_s19mvk.jpg"
+    },
+    {
+        "id": "6",
+        "name": "Seema Kumari",
+        "role": "Faculty Member",
+        "quote": "Inspiring students to think critically and act compassionately.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539463/Seema_Kumari_xrheww.jpg"
+    },
+    {
+        "id": "7",
+        "name": "Nripen Choudhury",
+        "role": "Faculty Member",
+        "quote": "Fostering academic growth with discipline and integrity.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Nripen_Choudhury_azcqhs.jpg"
+    },
+    {
+        "id": "8",
+        "name": "Dharitri Boro",
+        "role": "Faculty Member",
+        "quote": "Guided by values to shape the innovators of the next generation.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539461/Dharitri_Boro_e6pasw.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Namrata Devi Singh",
+        "role": "Faculty Member",
+        "quote": "Education is the key to unlocking a world of opportunities.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539461/Namrata_Devi_Singh_tkexma.jpg"
+    },
+    {
+        "id": "10",
+        "name": "Sanjeev Das",
+        "role": "Faculty Member",
+        "quote": "Transforming lives through quality education and mentorship.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Sanjeev_Das_uywpdg.jpg"
+    },
+    {
+        "id": "11",
+        "name": "Seempa Dutta",
+        "role": "Faculty Member",
+        "quote": "Encouraging exploration and discovery in every classroom.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539463/Seempa_Dutta_qlxzjq.jpg"
+    },
+    {
+        "id": "12",
+        "name": "Ranjina Saikia",
+        "role": "Faculty Member",
+        "quote": "Promoting holistic development and a love for learning.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Ranjina_Saikia_fhmzk4.jpg"
+    },
+    {
+        "id": "13",
+        "name": "Minu Roy",
+        "role": "Faculty Member",
+        "quote": "Striving for academic brilliance and moral excellence.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539462/Minu_Roy_owkcg8.jpg"
+    },
+    {
+        "id": "14",
+        "name": "Dipumoni Goswami",
+        "role": "Faculty Member",
+        "quote": "Patience and perseverance are the roots of successful teaching.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539461/Dipumoni_Goswami_tr3hca.jpg"
+    },
+    {
+        "id": "15",
+        "name": "Jyoti Mandal",
+        "role": "Faculty Member",
+        "quote": "Committed to molding students into responsible global citizens.",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/image/upload/v1770539461/Jyoti_Mandal_srbayb.jpg"
+    }
+]

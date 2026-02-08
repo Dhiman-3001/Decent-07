@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { Loader2, Eye, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,9 +32,13 @@ export default function LoginPage() {
 
             if (response.ok) {
                 // Success: Authenticated
-                // Force a full reload to ensure cookies are sent to all subsequents chunks/server interactions
-                // and to update all client-side state hooks immediately.
-                window.location.href = '/gallery'
+                // Store credentials for API calls that require Basic Auth
+                const creds = btoa(`${username}:${password}`)
+                sessionStorage.setItem("admin_creds", creds)
+
+                window.dispatchEvent(new Event('auth-change'))
+                router.push('/admin')
+                router.refresh()
             } else {
                 // Failed: Show error
                 const data = await response.json()
@@ -161,7 +165,7 @@ export default function LoginPage() {
                             <Button
                                 type="submit"
                                 size="lg"
-                                className="bg-blue-600 hover:bg-blue-500 text-white rounded-full px-8 h-10 font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+                                className="bg-blue-600 hover:bg-blue-500 text-white rounded-full px-8 h-10 font-medium transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] cursor-pointer"
                                 disabled={isLoading}
                             >
                                 {isLoading ? (

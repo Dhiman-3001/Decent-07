@@ -35,18 +35,29 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll)
 
     // Check admin status
-    fetch('/api/auth/me', { cache: 'no-store' })
-      .then(res => res.json())
-      .then(data => setIsAdmin(data.isAdmin))
-      .catch(err => console.error("Auth check failed", err))
+    const checkAuth = () => {
+      fetch('/api/auth/me', { cache: 'no-store' })
+        .then(res => res.json())
+        .then(data => setIsAdmin(data.isAdmin))
+        .catch(err => console.error("Auth check failed", err))
+    }
 
-    return () => window.removeEventListener("scroll", handleScroll)
+    checkAuth()
+
+    const handleAuthChange = () => checkAuth()
+    window.addEventListener('auth-change', handleAuthChange)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener('auth-change', handleAuthChange)
+    }
   }, [])
 
   const handleSignOut = async () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' })
       setIsAdmin(false)
+      window.dispatchEvent(new Event('auth-change'))
       router.push('/')
       router.refresh()
     } catch (error) {
@@ -54,21 +65,20 @@ export function Navbar() {
     }
   }
 
-  const displayedLinks = isAdmin
-    ? navLinks.filter(link => ["Gallery", "Events"].includes(link.label))
-    : navLinks
+  // Show all navigation links for both admin and regular users
+  const displayedLinks = navLinks
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out will-change-transform",
         scrolled ? "py-2" : "py-4 md:py-2"
       )}
     >
       <nav className={cn(
-        "mx-auto transition-[max-width,background-color,border-color,box-shadow,padding] duration-500 ease-in-out",
+        "mx-auto transition-all duration-500 ease-in-out will-change-[max-width,background-color,border-color,padding,box-shadow]",
         isOpen
           ? "max-w-full rounded-3xl bg-background/95 backdrop-blur-md border border-border/40 shadow-lg px-6"
           : scrolled
@@ -113,7 +123,7 @@ export function Navbar() {
                   ? "text-muted-foreground"
                   : "text-muted-foreground dark:text-white/60"
               )}>
-                Based on CBSE Board Pattern
+                {pathname.startsWith('/admin') ? 'Admin Panel' : 'Based on CBSE Board Pattern'}
               </p>
             </div>
           </Link>
@@ -129,9 +139,9 @@ export function Navbar() {
               </h1>
               <p className={cn(
                 "text-[10px] uppercase tracking-wider font-semibold transition-colors duration-300 whitespace-nowrap",
-                "text-red-500"
+                pathname.startsWith('/admin') ? "text-amber-500" : "text-red-500"
               )}>
-                Based on CBSE Board Pattern
+                {pathname.startsWith('/admin') ? 'Admin Panel' : 'Based on CBSE Board Pattern'}
               </p>
             </Link>
           </div>
@@ -174,7 +184,7 @@ export function Navbar() {
               <Button
                 variant="destructive"
                 size="sm"
-                className="hidden sm:block ml-2 rounded-full px-6"
+                className="hidden sm:block ml-2 rounded-full px-6 cursor-pointer"
                 onClick={(e) => {
                   e.stopPropagation()
                   handleSignOut()
@@ -188,7 +198,7 @@ export function Navbar() {
                 className="hidden sm:block ml-2"
                 onClick={(e) => e.stopPropagation()}
               >
-                <Button variant="gradient" size="sm" className="rounded-full px-6 shadow-primary/25">
+                <Button variant="gradient" size="sm" className="rounded-full px-6 shadow-primary/25 cursor-pointer">
                   Login
                 </Button>
               </Link>
@@ -250,7 +260,7 @@ export function Navbar() {
                   {isAdmin ? (
                     <Button
                       variant="destructive"
-                      className="w-full rounded-xl"
+                      className="w-full rounded-xl cursor-pointer"
                       onClick={() => {
                         setIsOpen(false)
                         handleSignOut()
@@ -263,7 +273,7 @@ export function Navbar() {
                       href="/login"
                       onClick={() => setIsOpen(false)}
                     >
-                      <Button variant="gradient" className="w-full rounded-xl">
+                      <Button variant="gradient" className="w-full rounded-xl cursor-pointer">
                         Login
                       </Button>
                     </Link>
