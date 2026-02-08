@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Calendar, Clock, MapPin, ArrowRight, ChevronDown, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import NextImage from "next/image"
 
 const categories = ["All", "Events", "Achievements", "Announcements"]
 
@@ -134,11 +134,12 @@ export function EventsGrid() {
                   className="aspect-[4/3] relative overflow-hidden bg-slate-100 cursor-zoom-in"
                   onClick={() => setSelectedImage(event.image)}
                 >
-                  <img
+                  <NextImage
                     src={event.image}
                     alt={event.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                     style={{ objectPosition: "center 25%" }}
                   />
                   {event.featured && (
@@ -223,11 +224,14 @@ export function EventsGrid() {
                 className="relative max-w-4xl max-h-[90vh] w-full rounded-2xl overflow-hidden bg-white"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img
-                  src={selectedImage}
-                  alt="Event Full View"
-                  className="w-full h-full object-contain max-h-[85vh]"
-                />
+                <div className="relative w-full h-[85vh]">
+                  <NextImage
+                    src={selectedImage}
+                    alt="Event Full View"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <button
                   onClick={() => setSelectedImage(null)}
                   className="absolute top-4 right-4 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors backdrop-blur-md"

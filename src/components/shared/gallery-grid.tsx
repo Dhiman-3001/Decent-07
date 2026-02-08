@@ -1,8 +1,10 @@
 "use client"
 
-import { useState, useEffect, useMemo } from "react"
+import NextImage from "next/image"
+import { useState, useEffect, useMemo, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Image as ImageIcon, Video, X, Maximize2, Play, ChevronDown, ExternalLink, Loader2 } from "lucide-react"
+import { useRouter, useSearchParams, usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import galleryData from "@/data/gallery.json"
@@ -31,13 +33,24 @@ type GalleryItem = {
 }
 
 export function GalleryGrid() {
-    const [activeCategory, setActiveCategory] = useState("Images")
+    const router = useRouter()
+    const pathname = usePathname()
+    const searchParams = useSearchParams()
+
+    const [activeCategory, setActiveCategory] = useState(searchParams.get("category") || "Images")
     const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null)
     const [items, setItems] = useState<GalleryItem[]>(galleryData as GalleryItem[])
     const [isLoading, setIsLoading] = useState(true)
 
+    // Video Player State
+    const [videoQuality, setVideoQuality] = useState("1080")
+    const [savedTime, setSavedTime] = useState(0)
+    const [isBuffering, setIsBuffering] = useState(true)
+    const videoRef = useRef<HTMLVideoElement>(null)
+    const [loadingProgress, setLoadingProgress] = useState(0)
+
     // Pagination state
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(Number(searchParams.get("page")) || 1)
     const [showingMore, setShowingMore] = useState(false)
 
     // Count items by type
@@ -51,10 +64,51 @@ export function GalleryGrid() {
         fetchItems()
     }, [])
 
+    // Reset video state when opening new item
     useEffect(() => {
+        if (selectedItem) {
+            setVideoQuality("1080")
+            setSavedTime(0)
+            setIsBuffering(true)
+            setLoadingProgress(0)
+        }
+    }, [selectedItem])
+
+    // Better buffering check interval
+    useEffect(() => {
+        let interval: NodeJS.Timeout
+
+        if (isBuffering && selectedItem?.type === 'video') {
+            interval = setInterval(() => {
+                if (videoRef.current) {
+                    const vid = videoRef.current
+                    if (vid.duration > 0 && vid.buffered.length > 0) {
+                        const loaded = vid.buffered.end(vid.buffered.length - 1)
+                        const progress = (loaded / vid.duration) * 100
+                        setLoadingProgress(Math.min(progress, 100))
+
+                        if (progress >= 15) {
+                            setIsBuffering(false)
+                            vid.play().catch(console.error)
+                        }
+                    }
+                }
+            }, 50) // Check every 50ms for smoother updates
+        }
+
+        return () => {
+            if (interval) clearInterval(interval)
+        }
+    }, [isBuffering, selectedItem])
+
+
+
+    const handleCategoryChange = (category: string) => {
+        setActiveCategory(category)
         setCurrentPage(1)
         setShowingMore(false)
-    }, [activeCategory, selectedItem])
+        router.replace(`${pathname}?category=${category}&page=1`, { scroll: false })
+    }
 
     const fetchItems = async () => {
         try {
@@ -92,7 +146,7 @@ export function GalleryGrid() {
             return pageItems.slice(0, initialDisplayCount)
         }
         return pageItems
-    }, [filteredItems, currentPage, activeCategory, showingMore, itemsPerPage, initialDisplayCount])
+    }, [filteredItems, currentPage, showingMore, itemsPerPage, initialDisplayCount])
 
     // Check if "Show More" should be visible
     const currentPageItems = useMemo(() => {
@@ -112,6 +166,7 @@ export function GalleryGrid() {
         setCurrentPage(page)
         setShowingMore(false)
         window.scrollTo({ top: 0, behavior: 'smooth' })
+        router.replace(`${pathname}?category=${activeCategory}&page=${page}`, { scroll: false })
     }
 
     if (isLoading) {
@@ -128,9 +183,9 @@ export function GalleryGrid() {
                         {categories.map((category) => (
                             <button
                                 key={category}
-                                onClick={() => setActiveCategory(category)}
+                                onClick={() => handleCategoryChange(category)}
                                 className={cn(
-                                    "px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300",
+                                    "px-8 py-2.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer",
                                     activeCategory === category
                                         ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20 scale-105"
                                         : "bg-muted dark:bg-card/40 text-muted-foreground hover:bg-muted/80 dark:hover:bg-card/60 backdrop-blur-sm border border-border/40"
@@ -170,24 +225,22 @@ export function GalleryGrid() {
                             >
                                 {item.cloudinary_url ? (
                                     item.type === "image" ? (
-                                        <img
+                                        <NextImage
                                             src={item.cloudinary_url}
                                             alt={item.title}
-                                            loading="lazy"
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            fill
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                     ) : (
                                         <div className="relative w-full h-full">
                                             {/* Generate a thumbnail from Cloudinary video by changing extension to .jpg */}
-                                            <img
+                                            <NextImage
                                                 src={item.cloudinary_url.replace(/\.[^/.]+$/, ".jpg")}
                                                 alt={item.title}
-                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                                loading="lazy"
-                                                onError={(e) => {
-                                                    // Fallback if thumbnail generation fails
-                                                    e.currentTarget.style.display = 'none'
-                                                }}
+                                                fill
+                                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                                className="object-cover transition-transform duration-500 group-hover:scale-110"
                                             />
                                             <div className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300 group-hover:opacity-0">
                                                 <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 text-white">
@@ -315,11 +368,12 @@ export function GalleryGrid() {
                             >
                                 {selectedItem.type === "image" ? (
                                     // Image Lightbox - Simple centered view
-                                    <div className="flex flex-col items-center">
-                                        <img
+                                    <div className="flex flex-col items-center w-full h-[80vh] relative">
+                                        <NextImage
                                             src={selectedItem.cloudinary_url}
                                             alt={selectedItem.title}
-                                            className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+                                            fill
+                                            className="object-contain rounded-2xl shadow-2xl"
                                         />
                                         <div className="mt-6 text-center">
                                             <h3 className="text-white text-xl font-semibold">{selectedItem.title}</h3>
@@ -333,42 +387,132 @@ export function GalleryGrid() {
                                     <div className="flex flex-col gap-4">
                                         <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
                                             {/* Left Column - Video Player */}
-                                            <div className="lg:col-span-3 bg-black/60 relative flex items-center justify-center h-[50vh] lg:h-[75vh] w-full max-w-full rounded-3xl overflow-hidden border border-white/10">
-                                                <video
-                                                    src={selectedItem.cloudinary_url}
-                                                    controls
-                                                    autoPlay
-                                                    playsInline
-                                                    className="w-full h-full object-contain rounded-3xl overflow-hidden focus:outline-none"
-                                                    style={{ maxHeight: '100%', maxWidth: '100%' }}
-                                                    onClick={(e) => {
-                                                        const video = e.currentTarget
-                                                        if (video.paused) {
-                                                            video.play()
-                                                        } else {
-                                                            video.pause()
-                                                        }
-                                                    }}
-                                                    onDoubleClick={(e) => {
-                                                        const video = e.currentTarget
-                                                        if (document.fullscreenElement) {
-                                                            document.exitFullscreen()
-                                                        } else {
-                                                            video.requestFullscreen()
-                                                        }
-                                                    }}
-                                                />
+                                            <div className="lg:col-span-3 bg-black/60 relative flex items-center justify-center h-[50vh] lg:h-[75vh] w-full max-w-full rounded-3xl overflow-hidden border border-white/10 group/video">
+                                                {(() => {
+                                                    const optimizedUrl = selectedItem.cloudinary_url.replace(
+                                                        '/video/upload/',
+                                                        `/video/upload/f_mp4,vc_h264,q_auto,h_${videoQuality},c_limit/`
+                                                    ).replace(/\.[^/.]+$/, '.mp4');
+
+                                                    return (
+                                                        <>
+                                                            {/* Loading Overlay with Progress */}
+                                                            <AnimatePresence>
+                                                                {isBuffering && (
+                                                                    <motion.div
+                                                                        initial={{ opacity: 0 }}
+                                                                        animate={{ opacity: 1 }}
+                                                                        exit={{ opacity: 0 }}
+                                                                        className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-black/80 backdrop-blur-sm"
+                                                                    >
+                                                                        {/* Video Poster/Thumbnail Background while loading */}
+                                                                        <div className="absolute inset-0 opacity-20 bg-center bg-cover blur-md"
+                                                                            style={{
+                                                                                backgroundImage: `url(${selectedItem.cloudinary_url.replace(/\.[^/.]+$/, ".jpg")})`
+                                                                            }}
+                                                                        />
+
+                                                                        <div className="relative z-10 flex flex-col items-center gap-3">
+                                                                            <div className="relative">
+                                                                                <Loader2 className="w-10 h-10 text-primary animate-spin" />
+                                                                                <div className="absolute inset-0 flex items-center justify-center">
+                                                                                    <span className="text-[8px] font-bold text-white/50">
+                                                                                        {Math.round(loadingProgress)}%
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <span className="text-white/60 text-xs font-medium tracking-widest uppercase animate-pulse">
+                                                                                Buffering Video
+                                                                            </span>
+                                                                        </div>
+                                                                    </motion.div>
+                                                                )}
+                                                            </AnimatePresence>
+
+                                                            <video
+                                                                ref={videoRef}
+                                                                key={selectedItem.id} // Use ID to persist element ref, src change triggers load
+                                                                src={optimizedUrl}
+                                                                controls={!isBuffering}
+                                                                autoPlay={false} // Disable autoplay to handle manually
+                                                                playsInline
+                                                                preload="auto"
+                                                                className={cn(
+                                                                    "w-full h-full object-contain focus:outline-none transition-opacity duration-500",
+                                                                    isBuffering ? "opacity-0" : "opacity-100"
+                                                                )}
+                                                                style={{ maxHeight: '100%', maxWidth: '100%' }}
+                                                                onLoadedMetadata={(e) => {
+                                                                    if (savedTime > 0) {
+                                                                        e.currentTarget.currentTime = savedTime
+                                                                    }
+                                                                }}
+                                                                onProgress={(e) => {
+                                                                    const vid = e.currentTarget;
+                                                                    if (vid.duration > 0) {
+                                                                        const buffered = vid.buffered;
+                                                                        if (buffered.length > 0) {
+                                                                            const loaded = buffered.end(buffered.length - 1);
+                                                                            const progress = (loaded / vid.duration) * 100;
+                                                                            setLoadingProgress(Math.min(progress, 100));
+
+                                                                            // Wait for 15% buffer before playing
+                                                                            if (progress >= 15 && isBuffering) {
+                                                                                setIsBuffering(false);
+                                                                                vid.play().catch(console.error);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }}
+                                                                onWaiting={() => {
+                                                                    // Only trigger buffering if we really stalled, but don't reset full load logic
+                                                                    // if simply seeking.
+                                                                    // For now, let's keep it simple: initial load is the main concern.
+                                                                }}
+                                                            >
+                                                                <source src={optimizedUrl} type="video/mp4" />
+                                                                Your browser does not support the video tag.
+                                                            </video>
+                                                        </>
+                                                    );
+                                                })()}
                                             </div>
 
                                             {/* Right Column - Details Card */}
                                             <div className="lg:col-span-2 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-white/10 shadow-2xl flex flex-col h-auto lg:h-[75vh] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                                                 {/* Title */}
                                                 <div className="mb-6">
-                                                    <div className="flex items-center gap-2 mb-2">
-                                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
-                                                            <Video className="w-4 h-4 text-primary" />
+                                                    <div className="flex items-center justify-between mb-2">
+                                                        <div className="flex items-center gap-2">
+                                                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                                                                <Video className="w-4 h-4 text-primary" />
+                                                            </div>
+                                                            <span className="text-xs font-medium text-primary/80 uppercase tracking-wider">Video</span>
                                                         </div>
-                                                        <span className="text-xs font-medium text-primary/80 uppercase tracking-wider">Video</span>
+                                                        <div className="flex items-center gap-1 bg-black/40 backdrop-blur-sm p-1 rounded-lg border border-white/10">
+                                                            {["1080", "720", "480"].map((q) => (
+                                                                <button
+                                                                    key={q}
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation()
+                                                                        if (videoRef.current) {
+                                                                            setSavedTime(videoRef.current.currentTime)
+                                                                        }
+                                                                        setVideoQuality(q)
+                                                                        setIsBuffering(true) // Re-trigger buffering for new quality source
+                                                                        setLoadingProgress(0)
+                                                                    }}
+                                                                    className={cn(
+                                                                        "px-2.5 py-1 rounded-md text-[10px] font-bold transition-all cursor-pointer",
+                                                                        videoQuality === q
+                                                                            ? "bg-primary/20 text-primary shadow-sm"
+                                                                            : "text-white/40 hover:text-white/70 hover:bg-white/5"
+                                                                    )}
+                                                                >
+                                                                    {q}p
+                                                                </button>
+                                                            ))}
+                                                        </div>
                                                     </div>
                                                     <h3 className="text-white text-xl lg:text-2xl font-bold leading-tight">
                                                         {selectedItem.title}
@@ -445,6 +589,6 @@ export function GalleryGrid() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </section>
+        </section >
     )
 }

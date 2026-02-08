@@ -283,14 +283,14 @@
         "id": "vid-10",
         "type": "video",
         "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542460/Vid-10_cyetdf.mp4",
-        "title": "Annual Day Celebration",
-        "title2": "Dated : 02 Feb 2026",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Musical Performance | “Koi Mil Gaya” by Kavita Krishnamurthy & Udit Narayan | Decent Public School",
         "category": "Videos",
-        "description": "A spectacular celebration of our school's Annual Day featuring cultural performances, awards, and memorable moments with students, teachers, and parents.",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati – 781005, presented a melodious performance to “Koi Mil Gaya,” a beloved Bollywood track featuring the expressive vocals of Kavita Krishnamurthy and Udit Narayan. Known for its soft romantic mood, gentle rhythm, and heartfelt lyrics, this song evokes feelings of connection, longing, and joy — making it a beautiful choice for a soulful stage presentation that captivated the audience with its warm and uplifting essence.",
         "links": {
-            "youtube": "",
-            "facebook": "",
-            "instagram": ""
+            "youtube": "https://youtu.be/SMhj2tZXDaQ",
+            "facebook": "https://www.facebook.com/share/v/17DbAc2Jqs/",
+            "instagram": "https://www.instagram.com/reel/DUgOU0rF05d/"
         }
     },
     {
@@ -308,7 +308,7 @@
         }
     },
     {
-        "id": "vid-13",
+        "id": "vid-12",
         "type": "video",
         "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770542499/Vid-13_xwyuod.mp4",
         "title": "Annual Day Celebration - Dated : 02 Feb 2026",
@@ -319,6 +319,48 @@
             "youtube": "https://youtu.be/2W7v9bltSXY",
             "facebook": "https://www.facebook.com/share/v/1AcNVKG2k9/",
             "instagram": "https://www.instagram.com/reel/DUdlGF1lCzp/"
+        }
+    },
+    {
+        "id": "vid-13",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770565326/Vid-14_a433zy.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Energetic Dance | “Chogada Tara” by Darshan Raval & Asees Kaur | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati - 781005, hosted its Annual Day celebration on 2nd February, Sunday, featuring a powerful closing performance to 'Mere Desh Ki Aankhon Ki', a patriotic song sung by Guru Randhawa, a renowned Punjabi singer known for his soulful voice and emotional performances. The song resonates with national pride and patriotism, making it a fitting choice to conclude the Annual Day festivities with a strong sense of unity and patriotism, leaving a lasting impression on the audience.",
+        "links": {
+            "youtube": "https://youtu.be/3p5-h58Y_2c",
+            "facebook": "https://www.facebook.com/share/v/17YV6tNALz/",
+            "instagram": "https://www.instagram.com/reel/DUgJjK3kS1P/"
+        }
+    },
+    {
+        "id": "vid-14",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770568590/Vid-15_tmv48o.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Tribute Performance | Zubeen Garg Mashup | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati – 781005, honoured the incomparable musical legacy of late Zubeen Garg with a heartfelt mashup performance by our girls. Celebrated as the “Bard of the Brahmaputra,” Zubeen Garg was a cultural icon from Assam whose versatile voice and compositions—ranging from soulful Assamese melodies to chart-topping Bollywood hits like Ya Ali—touched millions and bridged traditional roots with contemporary expression. This tribute brought together fragments of his timeless songs in a moving blend that celebrated his profound influence on regional and national music, evoking pride, nostalgia, and deep emotional resonance among the audience.",
+        "links": {
+            "youtube": "https://youtu.be/nTdKRPXS6fU",
+            "facebook": "https://www.facebook.com/share/v/1Bwxny7qwT/",
+            "instagram": "https://www.instagram.com/reel/DUgLaPolz2C/"
+        }
+    },
+    {
+        "id": "vid-15",
+        "type": "video",
+        "cloudinary_url": "https://res.cloudinary.com/diopcnjro/video/upload/v1770571144/vid-16_eqbqlx.mp4",
+        "title": "Annual Day Celebration - Dated : 02 Feb 2026",
+        "title2": "Annual Day 2026 Dance Showcase | “Ghintang”, “Rukum Maikot”, “Ekdevf Limbu” | Decent Public School",
+        "category": "Videos",
+        "description": "Decent Public School (Estd. 2007), at Murong Okum, Japorigog, Guwahati – 781005, presented dynamic cultural performances to “Ghintang”, “Rukum Maikot”, and “Ekdevf Limbu”, each rooted in vibrant folk traditions and contemporary rhythms that celebrate diverse artistic expressions and spirited movement on stage — bringing a rich tapestry of sound and energy to the Annual Day audience.",
+        "links": {
+            "youtube": "https://youtu.be/xaRKjTxiGm8",
+            "facebook": "https://www.facebook.com/share/v/17pwh76UWz/",
+            "instagram": "https://www.instagram.com/reel/DUgSjOEDVbQ/"
         }
     }
 ]

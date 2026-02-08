@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import React from "react"
 import { motion } from "framer-motion"
 import {
   GraduationCap,
@@ -74,7 +75,7 @@ export function Footer() {
                   href: "https://www.youtube.com/@decentpublicschoolguwahati2915",
                 },
                 {
-                  Icon: (props: any) => (
+                  Icon: (props: React.ComponentProps<'svg'>) => (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"

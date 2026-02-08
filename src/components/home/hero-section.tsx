@@ -29,7 +29,6 @@ const defaultContent: HeroContent = {
 export function HeroSection() {
   const { isAdmin } = useAdminStatus()
   const [content, setContent] = useState<HeroContent>(defaultContent)
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     fetchContent()
@@ -45,7 +44,7 @@ export function HeroSection() {
     } catch (error) {
       console.error("Failed to load hero content:", error)
     } finally {
-      setIsLoading(false)
+      //
     }
   }
 

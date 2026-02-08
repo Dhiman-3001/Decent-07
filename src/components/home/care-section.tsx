@@ -85,7 +85,7 @@ export function CareSection() {
                     viewport={{ once: true }}
                     className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-8 mt-8 sm:mt-16"
                 >
-                    {features.map((feature, index) => (
+                    {features.map((feature) => (
                         <motion.div
                             key={feature.title}
                             variants={itemVariants}

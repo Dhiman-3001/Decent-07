@@ -64,7 +64,8 @@ export const securityConfig = {
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         imgSrc: ["'self'", "data:", "blob:", "https:"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        connectSrc: ["'self'"],
+        connectSrc: ["'self'", "https://res.cloudinary.com"],
+        mediaSrc: ["'self'", "data:", "blob:", "https://res.cloudinary.com"],
         frameAncestors: ["'none'"],
         formAction: ["'self'"],
         baseUri: ["'self'"]

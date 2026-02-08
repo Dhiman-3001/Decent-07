@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import { ArrowRight, Phone, Calendar } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { AdmissionModal } from "@/components/shared/admission-modal"
 
 export function CTASection() {
   return (

@@ -27,20 +27,20 @@ export function ContactInfo() {
   const [contact, setContact] = useState<ContactInfo>(defaultContact)
 
   useEffect(() => {
+    const fetchContact = async () => {
+      try {
+        const res = await fetch('/api/admin/content?section=contact&subsection=info')
+        if (res.ok) {
+          const data = await res.json()
+          if (data) setContact({ ...defaultContact, ...data })
+        }
+      } catch (error) {
+        console.error("Failed to load contact:", error)
+      }
+    }
+
     fetchContact()
   }, [])
-
-  const fetchContact = async () => {
-    try {
-      const res = await fetch('/api/admin/content?section=contact&subsection=info')
-      if (res.ok) {
-        const data = await res.json()
-        if (data) setContact({ ...defaultContact, ...data })
-      }
-    } catch (error) {
-      console.error("Failed to load contact:", error)
-    }
-  }
 
   const updateContact = async (field: keyof ContactInfo, value: string | string[]) => {
     const newContact = { ...contact, [field]: value }

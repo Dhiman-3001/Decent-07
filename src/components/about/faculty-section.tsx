@@ -4,9 +4,8 @@ import { useState, useEffect, useCallback } from "react"
 import { motion, Variants, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { SectionHeader } from "@/components/shared/section-header"
-import { cn } from "@/lib/utils"
 import { useAdminStatus } from "@/components/admin/inline-edit"
-import { Edit2, Loader2, Trash2, Plus, AlertTriangle, X } from "lucide-react"
+import { Edit2, Loader2, Trash2, Plus, AlertTriangle } from "lucide-react"
 import { FacultyModal } from "@/components/admin/faculty-modal"
 import { Button } from "@/components/ui/button"
 
@@ -210,9 +209,9 @@ export function FacultySection() {
                                         </h3>
                                     </div>
                                     <div className="relative">
-                                        <span className="absolute -top-6 -left-4 text-6xl text-primary/10 font-serif lg:block hidden">"</span>
+                                        <span className="absolute -top-6 -left-4 text-6xl text-primary/10 font-serif lg:block hidden">&quot;</span>
                                         <p className="text-lg sm:text-2xl text-slate-600 italic font-serif leading-relaxed relative z-10 text-balance">
-                                            "{leadFaculty.quote}"
+                                            &quot;{leadFaculty.quote}&quot;
                                         </p>
                                         <p className="mt-6 text-slate-400 text-[10px] font-black uppercase tracking-[0.4em]">
                                             Educator & Mentor
@@ -295,7 +294,7 @@ export function FacultySection() {
                                                     {member.name}
                                                 </h4>
                                                 <p className="text-white/70 text-[10px] sm:text-sm italic leading-relaxed line-clamp-3 sm:line-clamp-none">
-                                                    "{member.quote}"
+                                                    &quot;{member.quote}&quot;
                                                 </p>
                                             </div>
                                         </div>

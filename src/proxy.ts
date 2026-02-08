@@ -37,14 +37,15 @@ export function proxy(request: NextRequest) {
     // Permissions policy
     response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
 
-    // Content Security Policy (adjusted for Next.js)
+    // Content Security Policy (adjusted for Next.js and Cloudinary)
     const cspHeader = [
         "default-src 'self'",
         "script-src 'self' 'unsafe-inline' 'unsafe-eval'", // Required for Next.js
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-        "img-src 'self' data: blob: https:",
+        "img-src 'self' data: blob: https://res.cloudinary.com https:",
         "font-src 'self' https://fonts.gstatic.com",
-        "connect-src 'self'",
+        "media-src 'self' data: blob: https://res.cloudinary.com https:",
+        "connect-src 'self' https://res.cloudinary.com",
         "frame-ancestors 'none'",
         "form-action 'self'",
         "base-uri 'self'",
@@ -52,6 +53,7 @@ export function proxy(request: NextRequest) {
     ].join('; ')
 
     response.headers.set('Content-Security-Policy', cspHeader)
+    response.headers.set('Cross-Origin-Resource-Policy', 'cross-origin')
 
     // Strict Transport Security (for production)
     if (process.env.NODE_ENV === 'production') {
@@ -142,7 +144,7 @@ export function proxy(request: NextRequest) {
     const windowMs = 60000 // 1 minute
     const maxRequests = 300 // 300 requests per minute globally
 
-    let entry = globalRateLimitStore.get(ip)
+    const entry = globalRateLimitStore.get(ip)
 
     if (!entry || now > entry.resetTime) {
         globalRateLimitStore.set(ip, { count: 1, resetTime: now + windowMs })

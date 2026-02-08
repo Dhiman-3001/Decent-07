@@ -1,10 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Download, Smartphone, Bell, Calendar, FileText, Sparkles, CheckCircle } from "lucide-react"
+import { Download, Smartphone, Bell, Calendar, FileText, Sparkles } from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { SectionHeader } from "@/components/shared/section-header"
 
 export function DigitalFruitApp() {
     return (

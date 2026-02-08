@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
+import path from 'path'
 
 // ==================== RATE LIMITING ====================
 
@@ -314,7 +315,7 @@ export function sanitizePath(inputPath: string): string {
  * Validate that a path is within allowed directory
  */
 export function isPathSafe(filePath: string, allowedDir: string): boolean {
-    const path = require('path')
+
     const resolvedPath = path.resolve(allowedDir, filePath)
     return resolvedPath.startsWith(path.resolve(allowedDir))
 }

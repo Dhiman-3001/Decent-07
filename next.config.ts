@@ -73,10 +73,10 @@ const nextConfig: NextConfig = {
             key: "Cross-Origin-Opener-Policy",
             value: "same-origin",
           },
-          // Prevent loading of cross-origin resources
+          // Allow loading of cross-origin resources (needed for Cloudinary)
           {
             key: "Cross-Origin-Resource-Policy",
-            value: "same-origin",
+            value: "cross-origin",
           },
         ],
       },

@@ -9,6 +9,7 @@ export default function AdminPage() {
     const [mounted, setMounted] = useState(false)
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMounted(true)
     }, [])
 
@@ -52,12 +53,12 @@ export default function AdminPage() {
                         >
                             <Link href={section.href}>
                                 <div className={`bg-slate-900/50 border rounded-2xl p-6 hover:bg-slate-900 transition-all duration-300 cursor-pointer group ${section.highlight
-                                        ? 'border-blue-500/50 hover:border-blue-400'
-                                        : 'border-slate-800 hover:border-blue-500/50'
+                                    ? 'border-blue-500/50 hover:border-blue-400'
+                                    : 'border-slate-800 hover:border-blue-500/50'
                                     }`}>
                                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${section.highlight
-                                            ? 'bg-gradient-to-br from-blue-500 to-purple-600'
-                                            : 'bg-blue-500/10 group-hover:bg-blue-500/20'
+                                        ? 'bg-gradient-to-br from-blue-500 to-purple-600'
+                                        : 'bg-blue-500/10 group-hover:bg-blue-500/20'
                                         }`}>
                                         <section.icon className={`w-6 h-6 ${section.highlight ? 'text-white' : 'text-blue-400'}`} />
                                     </div>

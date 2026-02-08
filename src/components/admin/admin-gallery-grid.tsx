@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useMemo, useCallback } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import NextImage from "next/image"
 import {
     Image as ImageIcon,
     Video,
     X,
-    Maximize2,
     Play,
     ChevronDown,
     ExternalLink,
@@ -117,7 +117,7 @@ export function AdminGalleryGrid({ credentials }: AdminGalleryGridProps) {
             return pageItems.slice(0, initialDisplayCount)
         }
         return pageItems
-    }, [filteredItems, currentPage, activeCategory, showingMore, itemsPerPage, initialDisplayCount])
+    }, [filteredItems, currentPage, showingMore, itemsPerPage, initialDisplayCount])
 
     const currentPageItems = useMemo(() => {
         const start = (currentPage - 1) * itemsPerPage
@@ -255,11 +255,12 @@ export function AdminGalleryGrid({ credentials }: AdminGalleryGridProps) {
                             >
                                 {item.cloudinary_url ? (
                                     item.type === "image" ? (
-                                        <img
+                                        <NextImage
                                             src={item.cloudinary_url}
                                             alt={item.title}
-                                            loading="lazy"
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            fill
+                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-110"
                                         />
                                     ) : (
                                         <div className="relative w-full h-full">
@@ -403,11 +404,12 @@ export function AdminGalleryGrid({ credentials }: AdminGalleryGridProps) {
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 {selectedItem.type === "image" ? (
-                                    <div className="flex flex-col items-center">
-                                        <img
+                                    <div className="flex flex-col items-center w-full h-[80vh] relative">
+                                        <NextImage
                                             src={selectedItem.cloudinary_url}
                                             alt={selectedItem.title}
-                                            className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
+                                            fill
+                                            className="object-contain rounded-2xl shadow-2xl"
                                         />
                                         <div className="mt-6 text-center">
                                             <h3 className="text-white text-xl font-semibold">{selectedItem.title}</h3>
