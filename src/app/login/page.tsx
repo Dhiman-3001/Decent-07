@@ -57,7 +57,7 @@ export default function LoginPage() {
             {/* Background Ambience */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(var(--primary)/0.1),transparent_50%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(var(--secondary)/0.1),transparent_50%)]" />
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
 
             <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}

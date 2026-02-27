@@ -38,10 +38,10 @@ export function CurriculumOverview() {
               viewport={{ once: true }}
               className="relative lg:hidden mb-8"
             >
-              <div className="aspect-square rounded-3xl bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 overflow-hidden shadow-xl">
+              <div className="aspect-square rounded-3xl bg-linear-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 overflow-hidden shadow-xl">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
+                    <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
                       <Award className="w-12 h-12 text-white" />
                     </div>
                     <h3 className="font-serif text-2xl font-bold text-blue-900 dark:text-white mb-2">
@@ -53,7 +53,7 @@ export function CurriculumOverview() {
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-linear-to-br from-blue-600 to-indigo-600 rounded-2xl -z-10" />
             </motion.div>
 
             <p className="text-muted-foreground leading-relaxed mb-8">
@@ -83,10 +83,10 @@ export function CurriculumOverview() {
             viewport={{ once: true }}
             className="relative hidden lg:block"
           >
-            <div className="aspect-square rounded-3xl bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 overflow-hidden shadow-xl">
+            <div className="aspect-square rounded-3xl bg-linear-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 overflow-hidden shadow-xl">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
+                  <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center">
                     <Award className="w-12 h-12 text-white" />
                   </div>
                   <h3 className="font-serif text-2xl font-bold text-blue-900 dark:text-white mb-2">
@@ -98,7 +98,7 @@ export function CurriculumOverview() {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl -z-10" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-linear-to-br from-blue-600 to-indigo-600 rounded-2xl -z-10" />
           </motion.div>
         </div>
       </div>

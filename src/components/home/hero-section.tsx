@@ -66,12 +66,12 @@ export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-40 md:pt-28 pb-12 overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900" />
+      <div className="absolute inset-0 bg-linear-to-br from-slate-900 via-slate-800 to-indigo-900" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(var(--primary)/0.05),transparent_60%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,oklch(var(--secondary)/0.05),transparent_60%)]" />
 
       {/* Animated Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_60%,transparent_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[40px_40px] mask-[radial-gradient(ellipse_at_center,black_60%,transparent_100%)]" />
 
 
 
@@ -135,9 +135,9 @@ export function HeroSection() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
-              className="lg:hidden relative h-[250px] w-full block my-6"
+              className="lg:hidden relative h-62.5 w-full block my-6"
             >
-              <div className="absolute inset-0 bg-slate-900/50 rounded-[2rem] border border-white/10 backdrop-blur-sm overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-slate-900/50 rounded-4xl border border-white/10 backdrop-blur-sm overflow-hidden shadow-2xl">
                 <Image
                   src={content.heroImage}
                   alt="Hero"
@@ -146,8 +146,8 @@ export function HeroSection() {
                   priority
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl opacity-20 blur-xl animate-float" />
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-violet-500 to-fuchsia-400 rounded-full opacity-20 blur-2xl animate-float [animation-delay:2s]" />
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-linear-to-br from-blue-500 to-cyan-400 rounded-2xl opacity-20 blur-xl animate-float" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-linear-to-br from-violet-500 to-fuchsia-400 rounded-full opacity-20 blur-2xl animate-float [animation-delay:2s]" />
             </motion.div>
 
             <motion.div
@@ -249,9 +249,9 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="hidden lg:block relative h-[300px] lg:h-[500px] w-full lg:mt-0"
+            className="hidden lg:block relative h-75 lg:h-125 w-full lg:mt-0"
           >
-            <div className="absolute inset-0 bg-slate-900/50 rounded-[2rem] border border-white/10 backdrop-blur-sm overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-slate-900/50 rounded-4xl border border-white/10 backdrop-blur-sm overflow-hidden shadow-2xl">
               <Image
                 src={content.heroImage}
                 alt="Hero"
@@ -262,8 +262,8 @@ export function HeroSection() {
             </div>
 
             {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl opacity-20 blur-xl animate-float" />
-            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-to-br from-violet-500 to-fuchsia-400 rounded-full opacity-20 blur-2xl animate-float [animation-delay:2s]" />
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-linear-to-br from-blue-500 to-cyan-400 rounded-2xl opacity-20 blur-xl animate-float" />
+            <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-linear-to-br from-violet-500 to-fuchsia-400 rounded-full opacity-20 blur-2xl animate-float [animation-delay:2s]" />
           </motion.div>
         </div>
       </div>

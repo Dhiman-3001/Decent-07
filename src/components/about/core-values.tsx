@@ -67,7 +67,7 @@ const itemVariants = {
 
 export function CoreValues() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-slate-50/50 to-white">
+    <section className="py-24 bg-linear-to-b from-white via-slate-50/50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="Our Values"
@@ -88,7 +88,7 @@ export function CoreValues() {
               variants={itemVariants}
               className="group flex flex-col sm:flex-row gap-2 sm:gap-4 p-2 sm:p-6 bg-white rounded-xl sm:rounded-2xl border border-slate-100 shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:shadow-xl transition-all duration-300"
             >
-              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mx-auto sm:mx-0">
+              <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform mx-auto sm:mx-0">
                 <value.icon className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
               </div>
               <div className="text-center sm:text-left">

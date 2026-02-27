@@ -35,7 +35,7 @@ export function AdmissionModal({ children }: AdmissionModalProps) {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center mb-4">
+          <div className="w-12 h-12 rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center mb-4">
             <GraduationCap className="w-6 h-6 text-white" />
           </div>
           <DialogTitle className="font-serif text-2xl">

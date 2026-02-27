@@ -50,7 +50,7 @@ export function PrincipalMessage() {
   const messageParagraphs = member.quote.split('\n').filter((p: string) => p.trim() !== '')
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-blue-200 to-white relative">
+    <section className="py-24 bg-linear-to-b from-white via-blue-200 to-white relative">
       {/* Admin Edit Button */}
       {isAdmin && (
         <div className="absolute top-4 right-4 z-20">
@@ -85,7 +85,7 @@ export function PrincipalMessage() {
               className="lg:col-span-2"
             >
               <div className="relative">
-                <div className="aspect-[3/4] rounded-3xl bg-gradient-to-br from-indigo-100 to-white overflow-hidden shadow-2xl border border-border/50 relative">
+                <div className="aspect-[3/4] rounded-3xl bg-linear-to-br from-indigo-100 to-white overflow-hidden shadow-2xl border border-border/50 relative">
                   {member.cloudinary_url ? (
                     <Image
                       src={member.cloudinary_url}

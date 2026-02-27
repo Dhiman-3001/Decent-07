@@ -20,7 +20,7 @@ export function ContactForm() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-orange-50 via-rose-50 to-amber-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+    <section className="py-24 bg-linear-to-br from-orange-50 via-rose-50 to-amber-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="Send a Message"

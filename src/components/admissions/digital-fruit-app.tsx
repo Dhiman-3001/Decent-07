@@ -9,11 +9,11 @@ export function DigitalFruitApp() {
     return (
         <section className="py-12 md:py-16">
             <div className="container mx-auto px-4 lg:px-8 max-w-6xl">
-                <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-indigo-950 via-blue-900 to-indigo-950 shadow-2xl">
+                <div className="relative rounded-4xl overflow-hidden bg-linear-to-br from-indigo-950 via-blue-900 to-indigo-950 shadow-2xl">
                     {/* Background Patterns */}
                     <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px]" />
                     <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[400px] h-[400px] bg-purple-500/20 rounded-full blur-[80px]" />
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_at_center,black,transparent_80%)]" />
 
                     <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-12 items-center relative z-10 p-8 md:p-12">
                         {/* Left Content */}
@@ -30,7 +30,7 @@ export function DigitalFruitApp() {
                                 </div>
                                 <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                                     Your School in <br />
-                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-sky-200 to-white">Your Pocket</span>
+                                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-200 via-sky-200 to-white">Your Pocket</span>
                                 </h2>
                                 <p className="text-blue-100/80 text-base md:text-lg leading-relaxed max-w-lg">
                                     Digital Fruit seamlessly connects parents, students, and teachers. Access real-time academic progress, attendance records, and important circulars instantly.
@@ -87,7 +87,7 @@ export function DigitalFruitApp() {
                             <div className="relative">
                                 {/* Main Card Container */}
                                 <div className="relative z-10 p-4 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-2xl">
-                                    <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-[2rem] overflow-hidden shadow-inner ring-1 ring-white/20 bg-white">
+                                    <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-4xl overflow-hidden shadow-inner ring-1 ring-white/20 bg-white">
                                         <Image
                                             src="/School-app/App_Logo.jpg"
                                             alt="Digital Fruit App Interface"
@@ -96,7 +96,7 @@ export function DigitalFruitApp() {
                                             className="object-cover"
                                         />
                                         {/* Glossy Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent pointer-events-none" />
+                                        <div className="absolute inset-0 bg-linear-to-tr from-transparent via-white/30 to-transparent pointer-events-none" />
                                     </div>
                                 </div>
 

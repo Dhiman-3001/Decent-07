@@ -11,7 +11,7 @@ export function CTASection() {
       {/* Background */}
       <div className="absolute inset-0 bg-primary" />
       <div className="absolute inset-0 bg-gradient-premium opacity-90" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-size-[24px_24px]" />
 
       {/* Decorative Blobs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-float" />

@@ -46,7 +46,7 @@ const methods = [
 
 export function TeachingMethodology() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-indigo-50/20 to-white">
+    <section className="py-24 bg-linear-to-b from-white via-indigo-50/20 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="Our Approach"
@@ -65,7 +65,7 @@ export function TeachingMethodology() {
               whileHover={{ y: -5 }}
               className="bg-white rounded-xl sm:rounded-2xl p-2 sm:p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-300 text-center border border-slate-100 flex flex-col h-full"
             >
-              <div className="w-8 h-8 sm:w-14 sm:h-14 mx-auto rounded-lg sm:rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center mb-2 sm:mb-4 flex-shrink-0">
+              <div className="w-8 h-8 sm:w-14 sm:h-14 mx-auto rounded-lg sm:rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center mb-2 sm:mb-4 flex-shrink-0">
                 <method.icon className="w-4 h-4 sm:w-7 sm:h-7 text-white" />
               </div>
               <h3 className="font-serif text-xs sm:text-lg font-semibold text-slate-900 mb-1 sm:mb-2 leading-tight">

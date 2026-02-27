@@ -66,7 +66,7 @@ export default function AdminGalleryPage() {
 
     if (!isAuthenticated) {
         return (
-            <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center p-4">
+            <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center p-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function AdminGalleryPage() {
                     <div className="bg-slate-900/80 backdrop-blur-xl rounded-3xl p-8 border border-slate-700 shadow-2xl">
                         {/* Header */}
                         <div className="text-center mb-8">
-                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
+                            <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
                                 <ImageIcon className="w-8 h-8 text-white" />
                             </div>
                             <h1 className="text-2xl font-bold text-white mb-2">Gallery Admin</h1>
@@ -127,7 +127,7 @@ export default function AdminGalleryPage() {
                             <Button
                                 type="submit"
                                 disabled={isLoading}
-                                className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 gap-2 cursor-pointer"
+                                className="w-full py-3 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 gap-2 cursor-pointer"
                             >
                                 {isLoading ? (
                                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -149,7 +149,7 @@ export default function AdminGalleryPage() {
             <div className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
                 <div className="container mx-auto px-4 py-3 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                             <Settings className="w-4 h-4 text-white" />
                         </div>
                         <span className="font-semibold text-white">Gallery Admin</span>

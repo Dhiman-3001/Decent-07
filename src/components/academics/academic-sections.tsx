@@ -68,7 +68,7 @@ const sections = [
 
 export function AcademicSections() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-blue-400 to-white">
+    <section className="py-24 bg-linear-to-b from-white via-blue-400 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="Academic Structure"

@@ -14,10 +14,10 @@ export function AdmissionCTA() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-600 via-indigo-600 to-violet-600 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
+            className="bg-linear-to-br from-blue-600 via-indigo-600 to-violet-600 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
           >
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-size-[24px_24px]" />
 
             <div className="relative z-10">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mb-4">

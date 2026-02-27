@@ -124,7 +124,7 @@ export function Testimonials() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 via-slate-100/50 to-slate-50 relative">
+    <section className="py-24 bg-linear-to-b from-slate-50 via-slate-100/50 to-slate-50 relative">
       {/* Admin Indicator */}
       {isAdmin && (
         <div className="absolute top-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-600/90 text-white text-xs font-medium">

@@ -45,7 +45,7 @@ const steps = [
 
 export function AdmissionProcess() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-blue-50/50 to-white">
+    <section className="py-24 bg-linear-to-b from-white via-blue-50/50 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="How to Apply"
@@ -56,7 +56,7 @@ export function AdmissionProcess() {
         <div className="max-w-4xl mx-auto mt-16">
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-indigo-600 to-violet-600 hidden md:block" />
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-linear-to-b from-blue-600 via-indigo-600 to-violet-600 hidden md:block" />
 
             {/* Steps */}
             <div className="space-y-8">
@@ -71,7 +71,7 @@ export function AdmissionProcess() {
                 >
                   {/* Step Number */}
                   <div className="relative z-10 flex-shrink-0">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg">
                       <step.icon className="w-7 h-7 text-white" />
                     </div>
                   </div>

@@ -28,7 +28,7 @@ const documents = [
 
 export function EligibilityDocs() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-blue-300 to-white">
+    <section className="py-24 bg-linear-to-b from-white via-blue-300 to-white">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="Requirements"

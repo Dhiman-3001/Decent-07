@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center">
-        <h1 className="font-serif text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mb-4">
+        <h1 className="font-serif text-8xl font-bold text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-indigo-600 mb-4">
           404
         </h1>
         <h2 className="font-serif text-2xl font-semibold text-blue-900 dark:text-white mb-4">

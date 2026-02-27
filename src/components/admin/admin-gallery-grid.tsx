@@ -200,7 +200,7 @@ export function AdminGalleryGrid({ credentials }: AdminGalleryGridProps) {
                             setEditItem(null)
                             setShowUploadModal(true)
                         }}
-                        className="gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 cursor-pointer"
+                        className="gap-2 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 cursor-pointer"
                     >
                         <Plus className="w-5 h-5" />
                         Upload New
@@ -429,10 +429,10 @@ export function AdminGalleryGrid({ credentials }: AdminGalleryGridProps) {
                                                 />
                                             </div>
 
-                                            <div className="lg:col-span-2 bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-white/10 shadow-2xl flex flex-col h-auto lg:h-[75vh] overflow-y-auto [&::-webkit-scrollbar]:hidden">
+                                            <div className="lg:col-span-2 bg-linear-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-xl rounded-3xl p-6 lg:p-8 border border-white/10 shadow-2xl flex flex-col h-auto lg:h-[75vh] overflow-y-auto [&::-webkit-scrollbar]:hidden">
                                                 <div className="mb-6">
                                                     <div className="flex items-center gap-2 mb-2">
-                                                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                                                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-primary/20 to-primary/10 flex items-center justify-center">
                                                             <Video className="w-4 h-4 text-primary" />
                                                         </div>
                                                         <span className="text-xs font-medium text-primary/80 uppercase tracking-wider">Video</span>

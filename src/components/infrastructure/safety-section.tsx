@@ -39,7 +39,7 @@ const safetyFeatures = [
 
 export function SafetySection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-amber-50/30 via-orange-50/20 to-white dark:from-slate-900/30 dark:via-slate-900/20 dark:to-background border-y border-amber-200/30 dark:border-slate-800/40">
+    <section className="py-24 bg-linear-to-b from-amber-50/30 via-orange-50/20 to-white dark:from-slate-900/30 dark:via-slate-900/20 dark:to-background border-y border-amber-200/30 dark:border-slate-800/40">
       <div className="container mx-auto px-4 lg:px-8">
         <SectionHeader
           badge="Safety First"

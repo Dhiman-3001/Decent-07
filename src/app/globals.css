@@ -138,7 +138,7 @@
 
 /* Premium Gradients */
 @utility bg-gradient-premium {
-  @apply bg-gradient-to-r from-[oklch(40%_0.15_265)] to-[oklch(35%_0.15_280)];
+  @apply bg-linear-to-r from-[oklch(40%_0.15_265)] to-[oklch(35%_0.15_280)];
 }
 
 /* Animation Utilities */

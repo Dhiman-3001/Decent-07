@@ -85,7 +85,7 @@ export function FacilitiesGrid() {
               className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="flex gap-4">
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-14 h-14 rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <facility.icon className="w-7 h-7 text-white" />
                 </div>
                 <div className="flex-1">

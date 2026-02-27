@@ -57,7 +57,7 @@ export default function AdminPage() {
                                     : 'border-slate-800 hover:border-blue-500/50'
                                     }`}>
                                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors ${section.highlight
-                                        ? 'bg-gradient-to-br from-blue-500 to-purple-600'
+                                        ? 'bg-linear-to-br from-blue-500 to-purple-600'
                                         : 'bg-blue-500/10 group-hover:bg-blue-500/20'
                                         }`}>
                                         <section.icon className={`w-6 h-6 ${section.highlight ? 'text-white' : 'text-blue-400'}`} />

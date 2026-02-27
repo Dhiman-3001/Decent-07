@@ -142,7 +142,7 @@ export function FacultySection() {
                                 setEditItem(null)
                                 setShowAddModal(true)
                             }}
-                            className="gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 cursor-pointer shadow-lg"
+                            className="gap-2 bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 cursor-pointer shadow-lg"
                         >
                             <Plus className="w-5 h-5" />
                             Add Faculty
@@ -157,7 +157,7 @@ export function FacultySection() {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="group bg-white rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(15,23,42,0.1)] border border-slate-100 ring-1 ring-slate-100/50 relative"
+                            className="group bg-white rounded-4xl sm:rounded-[3rem] overflow-hidden shadow-[0_20px_60px_-15px_rgba(15,23,42,0.1)] border border-slate-100 ring-1 ring-slate-100/50 relative"
                         >
                             {/* Admin Controls for Lead Faculty */}
                             {isAdmin && (
@@ -281,7 +281,7 @@ export function FacultySection() {
                                                 <p className="text-xs">Photo Coming Soon</p>
                                             </div>
                                         )}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <div className="absolute inset-0 bg-linear-to-t from-slate-900/95 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                         <div className="absolute inset-x-0 bottom-0 p-4 sm:p-8 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-8 group-hover:translate-y-0 text-center sm:text-left">
                                             <div className="space-y-2 sm:space-y-4">
                                                 <div className="hidden sm:flex items-center gap-3">

@@ -191,7 +191,7 @@ export function FacultyModal({ isOpen, onClose, onSuccess, editItem, credentials
                         {/* Header */}
                         <div className="sticky top-0 z-10 bg-slate-900 flex items-center justify-between p-6 border-b border-slate-700">
                             <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+                                <div className="w-12 h-12 rounded-xl bg-linear-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
                                     <User className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
@@ -331,7 +331,7 @@ export function FacultyModal({ isOpen, onClose, onSuccess, editItem, credentials
                             <Button
                                 onClick={handleSubmit}
                                 disabled={isUploading}
-                                className="gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 cursor-pointer"
+                                className="gap-2 bg-linear-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 cursor-pointer"
                             >
                                 {isUploading ? (
                                     <>
